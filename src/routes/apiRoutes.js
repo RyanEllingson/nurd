@@ -3,10 +3,8 @@ import axios from "axios";
 export default {
   getBoardGame: function(searchName) {
     return axios
-      .get("https://ryan-nurd-be.herokuapp.com/api/games/board", {
-        body: {
-          name: searchName
-        }
+      .post("http://localhost:5000/api/games/board", {
+        name: searchName
       })
       .then(res => {
         // res.json();
