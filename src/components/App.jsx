@@ -7,6 +7,8 @@ import routes from "../routes/apiRoutes";
 
 function App() {
   const games = routes.getBoardGame("catan");
+    
+
   return (
     <div>
       <SearchPage />
