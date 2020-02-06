@@ -1,17 +1,15 @@
 import React from "react";
-import EventCard from "./EventCard";
-import events from "../events";
-import SearchPage from "./SearchPage";
+// import EventCard from "./EventCard";
+// import events from "../events";
+// import SearchPage from "./SearchPage";
 import "./styles.css";
 import routes from "../routes/apiRoutes";
 
 function App() {
-  const games = routes.getBoardGame("catan");
-    
-
+  const group = routes.getAllGroups();
   return (
     <div>
-      <SearchPage />
+      {/* <SearchPage />
 
       <div class="columns is-multiline"> </div>
 
@@ -86,7 +84,7 @@ function App() {
         userName={events[2].userName}
         subtitle={events[2].subtitle}
         email={events[2].email}
-      />
+      /> */}
     </div>
   );
 }
