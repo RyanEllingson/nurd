@@ -1,7 +1,7 @@
 const events = [
   {
     name: "Friday Night Magic",
-    imageURL: "https://picsum.photos/96/96",
+    imageURL: "https://picsum.photos/200",
     imgURL:
       "https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg",
     userName: "Ryan",
@@ -10,7 +10,7 @@ const events = [
   },
   {
     name: "D&D",
-    imageURL: "https://picsum.photos/96/96",
+    imageURL: "https://picsum.photos/200",
     imgURL:
       "https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg",
     userName: "Jesse",
@@ -19,7 +19,7 @@ const events = [
   },
   {
     name: "Catan",
-    imageURL: "https://picsum.photos/96/96",
+    imageURL: "https://picsum.photos/200",
     imgURL:
       "https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg",
     userName: "William",
