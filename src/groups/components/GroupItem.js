@@ -32,6 +32,7 @@ const GroupItem = props => {
             <h2>{props.title}</h2>
             <h3>{props.address}</h3>
             <p>{props.description}</p>
+            <h3>{props.creatorId}</h3>
           </div>
           <div className="group-item__actions">
             <Button inverse onClick={openMapHandler}>
