@@ -22,10 +22,27 @@ const App = () => {
       <main>
         <Switch>
           <Route path="/" exact>
+            <UserGroups />
+          </Route>
+          <Route path="/search/" exact>
+            <SearchGroups />
+          </Route>
+          <Route path="/:userId/groups" exact>
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+          </Route>
+          <Route path="/:userId/profile" exact>
             <Users />
           </Route>
-          <Route path="/places/new" exact>
-            <NewPlace />
+          <Route path="/groups/new" exact>
+            <NewGroup />
           </Route>
           <Redirect to="/" />
         </Switch>
