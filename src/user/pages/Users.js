@@ -1,7 +1,10 @@
+//template Array for user Profile. USERS currently hard coded- will link to our backend. Currently hard-coded avatar image.
+
 import React from "react";
 
 import UsersList from "../components/UsersList";
 
+//Currently presentational only- will need to access back-end
 const Users = () => {
   const USERS = [
     {

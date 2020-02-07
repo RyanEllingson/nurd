@@ -1,3 +1,5 @@
+//template for user profile- props can be changed to match our database
+
 import React from "react";
 import { Link } from "react-router-dom";
 

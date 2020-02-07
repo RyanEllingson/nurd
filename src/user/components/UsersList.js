@@ -1,13 +1,18 @@
+//template for members list- can be used to render list of members in each group(#of members in each group).
+//variables can be changed to make more sence with our backend
 import React from "react";
-import "./UsersList.scss";
 
 import UserItem from "./UserItem";
+import Card from "../../shared/components/UIElements/Card";
+import "./UsersList.scss";
 
 let UsersList = props => {
   if (props.items.length === 0) {
     return (
       <div className="center">
-        <h2>No users found.</h2>
+        <Card>
+          <h2>No users found.</h2>
+        </Card>
       </div>
     );
   }
