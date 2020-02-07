@@ -4,7 +4,7 @@ import React from "react";
 
 import UserItem from "./UserItem";
 import Card from "../../shared/components/UIElements/Card";
-import "./UsersList.scss";
+import "./UsersList.css";
 
 let UsersList = props => {
   if (props.items.length === 0) {
@@ -24,7 +24,8 @@ let UsersList = props => {
           id={user.id}
           image={user.image}
           name={user.name}
-          placeCount={user.places}
+          email={user.email}
+          groupCount={user.groups}
         />
       ))}
     </ul>

@@ -10,22 +10,43 @@ import {
 } from "react-router-dom";
 
 import Users from "./user/pages/Users";
-import NewPlace from "./places/pages/NewPlace";
+import SearchGroups from "./groups/pages/SearchGroups";
+import NewGroup from "./groups/pages/NewGroup";
+import UserGroups from "./groups/pages/UserGroups";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 const App = () => {
   return (
     /* ensures that path is exact and will redirect user from landing on unsupported pages */
     <Router>
       <MainNavigation />
-      <Switch>
-        <Route path="/" exact>
-          <Users />
-        </Route>
-        <Route path="/places/new" exact>
-          <NewPlace />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <UserGroups />
+          </Route>
+          <Route path="/search/" exact>
+            <SearchGroups />
+          </Route>
+          <Route path="/:userId/groups" exact>
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+            <UserGroups />
+          </Route>
+          <Route path="/:userId/profile" exact>
+            <Users />
+          </Route>
+          <Route path="/groups/new" exact>
+            <NewGroup />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 };
