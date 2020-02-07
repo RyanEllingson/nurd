@@ -9,23 +9,14 @@ const NavLinks = props => {
       <li>
         <NavLink to="/" exact>
           {" "}
-          THE REALM
+          ALL USERS
         </NavLink>
       </li>
       <li>
-        <NavLink to="/search/" exact>
-          {" "}
-          SEARCH
-        </NavLink>
+        <NavLink to="/u1/places">MY PLACES</NavLink>
       </li>
       <li>
-        <NavLink to="/u1/groups">MY GROUPS</NavLink>
-      </li>
-      <li>
-        <NavLink to="/u1/profile">MY PROFILE</NavLink>
-      </li>
-      <li>
-        <NavLink to="/groups/new">CREATE GROUPS</NavLink>
+        <NavLink to="/places/new">ADD PLACE</NavLink>
       </li>
       <li>
         <NavLink to="/auth"> AUTHENTICATE</NavLink>
