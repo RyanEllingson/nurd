@@ -24,7 +24,8 @@ let UsersList = props => {
           id={user.id}
           image={user.image}
           name={user.name}
-          placeCount={user.places}
+          email={user.email}
+          groupCount={user.groups}
         />
       ))}
     </ul>

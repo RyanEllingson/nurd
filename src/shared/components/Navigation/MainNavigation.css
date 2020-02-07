@@ -19,6 +19,7 @@
 
 .main-navigation__title {
   color: white;
+  font-family: "Uncial Antiqua", cursive;
 }
 
 .main-navigation__title a {
@@ -30,7 +31,7 @@
   display: none;
 }
 
-.main-navigation__drawer-nav {
+.main-navigation__bar-nav {
   height: 100%;
 }
 

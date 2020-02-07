@@ -1,4 +1,3 @@
-//generic user Profile image. - may or may not be using this in production.
 import React from "react";
 
 import "./Avatar.css";

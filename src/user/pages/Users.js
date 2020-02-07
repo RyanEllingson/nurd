@@ -12,7 +12,8 @@ const Users = () => {
       name: "Ryan Stormcaller",
       image:
         "https://cdn.discordapp.com/avatars/244932903530659841/0c924a19fcf1b5c59bc9dc1b58b61bb0.jpg?size=1024",
-      places: 3
+      email: "r@mail.com",
+      groups: 1
     }
   ];
 

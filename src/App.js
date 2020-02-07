@@ -10,7 +10,9 @@ import {
 } from "react-router-dom";
 
 import Users from "./user/pages/Users";
-import NewPlace from "./places/pages/NewPlace";
+import SearchGroups from "./groups/pages/SearchGroups";
+import NewGroup from "./groups/pages/NewGroup";
+import UserGroups from "./groups/pages/UserGroups";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 const App = () => {
   return (
