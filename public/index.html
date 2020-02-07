@@ -34,7 +34,7 @@
       href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="src/styles.scss" /> -->
+    <link rel="stylesheet" href="src\index.css" />
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -49,6 +49,9 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- drawer hook div created so that side drawer is not in root div -->
+    <div id="backdrop-hook"></div>
+    <div id="drawer-hook"></div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
