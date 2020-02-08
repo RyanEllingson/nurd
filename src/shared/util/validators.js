@@ -38,8 +38,9 @@ export const validate = (value, validators) => {
     if (validator.type === VALIDATOR_TYPE_MAX) {
       isValid = isValid && +value <= validator.val;
     }
+    //https:tylermcginnis.com/validate-email-address-javascript/
     if (validator.type === VALIDATOR_TYPE_EMAIL) {
-      isValid = isValid && /^\S+@\S+\.\S+$/.test(value);
+      isValid = isValid && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
   }
   return isValid;

@@ -3,7 +3,7 @@ import React, { useReducer } from "react";
 import { validate } from "../../util/validators";
 import "./Input.css";
 
-const inputReducer = (state, action) => {
+const inputUser = (state, action) => {
   switch (action.type) {
     case "CHANGE":
       return {
@@ -23,7 +23,7 @@ const inputReducer = (state, action) => {
 };
 
 const Input = props => {
-  const [inputState, dispatch] = useReducer(inputReducer, {
+  const [inputState, dispatch] = useReducer(inputUser, {
     value: "",
     isTouched: false,
     isValid: false
