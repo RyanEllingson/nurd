@@ -1,6 +1,7 @@
 //Don't change code unless discussed first with AyDy! Will disrupt navbar links! Thanks!
 //trying out links with local host 3000. Will merge with backend. Expect changes.
-
+import 'bulma/css/bulma.css';
+import 'react-bulma-components/src/index.sass';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -8,6 +9,7 @@ import {
   Redirect,
   Switch
 } from "react-router-dom";
+
 
 import Users from "./user/pages/Users";
 import SearchGroups from "./groups/pages/SearchGroups";
