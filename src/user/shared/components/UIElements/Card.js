@@ -1,13 +1,8 @@
 import React from "react";
-import Card from 'react-bulma-components/lib/components/card';
-
+import Card from "react-bulma-components/lib/components/card";
 
 const Card = props => {
-  return (
-    <div className={`card ${props.className}`} style={props.style}>
-      {props.children}
-    </div>
-  );
+  return <div>{props.children}</div>;
 };
 
 export default Card;
