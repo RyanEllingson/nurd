@@ -16,8 +16,12 @@ import SearchGroups from "./groups/pages/SearchGroups";
 import NewGroup from "./groups/pages/NewGroup";
 import UserGroups from "./groups/pages/UserGroups";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+
+import {Auth} from "./auth/auth";
+
 const App = () => {
   return (
+    <Auth>
     /* ensures that path is exact and will redirect user from landing on unsupported pages */
     <Router>
       <MainNavigation />
@@ -50,6 +54,7 @@ const App = () => {
         </Switch>
       </main>
     </Router>
+    </Auth>
   );
 };
 export default App;
