@@ -1,5 +1,6 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
-import React from "react";
+import React, {useContext, useState, useEffect } from "react";
+import { AuthContext } from "../../auth/auth";
 
 import Input from "../../shared/components/FormElements/Input";
 import {
@@ -68,24 +69,40 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 // refer to NewGroup.js for inputhandler and formReducer
-const LoginAuth = () => {
+const LoginAuth = ({ history }) => {
+  const { user, loginUser, errors = {} } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const classes = useStyles();
-  const [formState, inputHandler] = useForm(
-    {
-      email: {
-        value: "",
-        inputIsValid: false
-      },
-      password: {
-        value: "",
-        inputIsValid: false
-      }
-    },
-    false
-  );
+  // const [formState, inputHandler] = useForm(
+  //   {
+  //     email: {
+  //       value: "",
+  //       inputIsValid: false
+  //     },
+  //     password: {
+  //       value: "",
+  //       inputIsValid: false
+  //     }
+  //   },
+  //   false
+  // );
+
+  useEffect(() => {
+    // If user is logged in and navigates to login page, reroute to default page
+    if (user) {
+      history.push("/");
+    }
+  }, [user, history]);
+
   const loginSubmitHandler = event => {
     event.preventDefault();
-    console.log(formState.inputs);
+    // console.log(formState.inputs);
+    const userData = {
+      email: email,
+      password: password
+    };
+    loginUser(userData);
   };
 
   return (
@@ -102,7 +119,9 @@ const LoginAuth = () => {
           </Typography>
           <form onSubmit={loginSubmitHandler} className={classes.form}>
             <Input
-              onInput={inputHandler}
+              // onInput={inputHandler}
+              onChange={e => setEmail(e.target.value)}
+              value={email}
               variant="outlined"
               margin="normal"
               required
@@ -117,7 +136,9 @@ const LoginAuth = () => {
             />
 
             <Input
-              onInput={inputHandler}
+              // onInput={inputHandler}
+              onChange={e => setPassword(e.target.value)}
+              value={password}
               variant="outlined"
               margin="normal"
               required
