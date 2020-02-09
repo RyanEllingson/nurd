@@ -22,9 +22,9 @@
 // export const VALIDATOR_MAX = val => ({ type: VALIDATOR_TYPE_MAX, val: val });
 // export const VALIDATOR_EMAIL = () => ({ type: VALIDATOR_TYPE_EMAIL });
 
-// // export default function emailinputIsValid(email) {
-// //   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-// // }
+export default function emailinputIsValid(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 
 // export const validate = (value, validators) => {
 //   let inputIsValid = true;

@@ -1,10 +1,13 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import Input from "../../shared/components/FormElements/Input";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -45,29 +48,29 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2)
   }
 }));
-
 const LoginAuth = ({ history }) => {
-  const classes = useStyles();
   const { user, loginUser = {} } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const classes = useStyles();
 
   useEffect(() => {
+    // If user is logged in and navigates to login page, reroute to default page
     if (user) {
-      //   console.log("shiboopy");
       history.push("/");
     }
   }, [user, history]);
 
   const loginSubmitHandler = event => {
     event.preventDefault();
-    const newLogin = {
+    // console.log(formState.inputs);
+    const userData = {
       email: email,
       password: password
     };
-    console.log(newLogin);
-    loginUser(newLogin, history);
+    loginUser(userData);
   };
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -78,44 +81,41 @@ const LoginAuth = ({ history }) => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Login
+            Sign in
           </Typography>
-          <ValidatorForm onSubmit={loginSubmitHandler} className={classes.form}>
-            <TextValidator
+          <form onSubmit={loginSubmitHandler} className={classes.form}>
+            <Input
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
-              onSubmit={loginSubmitHandler}
-              onError={errors => console.log(errors)}
               margin="normal"
+              required
               fullWidth
               id="email"
               label="Email Address"
               name="email"
-              type="email"
               autoComplete="email"
+              errorText="Not a valid email address"
               autoFocus
-              validators={["required", "isEmail"]}
-              errorMessages={["this field is required", "email is not valid"]}
             />
-            <TextValidator
+
+            <Input
               onChange={e => setPassword(e.target.value)}
-              onSubmit={loginSubmitHandler}
-              onError={errors => console.log(errors)}
               value={password}
               variant="outlined"
               margin="normal"
+              required
               fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
-              validators={["required", "isPassword"]}
-              errorMessages={[
-                "this field is required",
-                "password is not valid"
-              ]}
+              errorText="Not a valid password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
             />
             <Button
               type="submit"
@@ -123,19 +123,19 @@ const LoginAuth = ({ history }) => {
               variant="contained"
               color="primary"
               className={classes.submit}>
-              Login
+              Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                {/* <Link href="#" variant="body2">
-                  Forgot password?
-                </Link> */}
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
               </Grid>
             </Grid>
             <Box mt={5}>
               <CurrentDate />
             </Box>
-          </ValidatorForm>
+          </form>
         </div>
       </Grid>
     </Grid>
@@ -143,39 +143,3 @@ const LoginAuth = ({ history }) => {
 };
 
 export default LoginAuth;
-
-// class MyForm extends React.Component {
-//   state = {
-//     email: ""
-//   };
-
-//   handleChange = event => {
-//     const email = event.target.value;
-//     this.setState({ email });
-//   };
-
-//   handleSubmit = () => {
-//     // your submit logic
-//   };
-
-//   render() {
-//     const { email } = this.state;
-//     return (
-//       <ValidatorForm
-//         ref="form"
-//         onSubmit={this.handleSubmit}
-//         onError={errors => console.log(errors)}>
-//         <TextValidator
-//           label="Email"
-//           onChange={this.handleChange}
-//           name="email"
-//           value={email}
-//           validators={["required", "isEmail"]}
-//           errorMessages={["this field is required", "email is not valid"]}
-//         />
-//         <Button type="submit">Submit</Button>
-//       </ValidatorForm>
-//     );
-//   }
-// }
-// export default MyForm;

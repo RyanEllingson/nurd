@@ -1,11 +1,11 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import Input from "../../shared/components/FormElements/Input";
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
 
 const Register = ({ history }) => {
   const classes = useStyles();
-  const { user, registerUser = {} } = useContext(AuthContext);
+  const { user, registerUser, errors = {} } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -90,140 +90,104 @@ const Register = ({ history }) => {
           <Typography component="h1" variant="h5">
             Register
           </Typography>
-          <ValidatorForm onSubmit={regSubmitHandler} className={classes.form}>
-            <TextValidator
+          <form onSubmit={regSubmitHandler} className={classes.form}>
+            <Input
               onChange={e => setName(e.target.value)}
-              value={email}
+              value={name}
               variant="outlined"
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
               margin="normal"
+              required
               fullWidth
-              id="email"
+              id="name"
               label="User Name"
-              name="email"
-              type="email"
+              name="name"
               autoComplete="name"
+              error={errors.name}
+              errorText={errors.name}
               autoFocus
-              validators={["required", "isName"]}
-              errorMessages={[
-                "this field is required",
-                "User Name is not valid"
-              ]}
             />
-            {/* <input onChange={e=>setName(e.target.value)} value={name} /> */}
-            <TextValidator
+            <Input
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
               margin="normal"
+              required
               fullWidth
               id="email"
               label="Email Address"
               name="email"
-              type="email"
               autoComplete="email"
+              errorText={errors.email}
               autoFocus
-              validators={["required", "isEmail"]}
-              errorMessages={["this field is required", "email is not valid"]}
             />
-            <TextValidator
-              onChange={e => setPassword2(e.target.value)}
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
+
+            <Input
+              //   onInput={inputHandler}
+              onChange={e => setPassword(e.target.value)}
               value={password}
               variant="outlined"
               margin="normal"
+              required
               fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
-              validators={["required", "isPassword"]}
-              errorMessages={[
-                "this field is required",
-                "password is not valid"
-              ]}
+              errorText={errors.password}
             />
-            <TextValidator
-              onChange={e => setPassword(e.target.value)}
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
+            <Input
+              //   onInput={inputHandler}
+              onChange={e => setPassword2(e.target.value)}
               value={password2}
               variant="outlined"
               margin="normal"
+              required
               fullWidth
-              name="Confirm Password"
+              name="password2"
               label="Confirm Password"
               type="password"
               id="password2"
               autoComplete="current-password"
-              validators={["required", "isPassword"]}
-              errorMessages={[
-                "this field is required",
-                "password is not valid"
-              ]}
+              errorText={errors.password2}
             />
-            <TextValidator
+            <Input
               onChange={e => setAge(e.target.value)}
               value={age}
               variant="outlined"
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
               margin="normal"
+              required
               fullWidth
-              id="age"
-              label="Age"
               name="age"
-              type="age"
+              label="Age"
+              id="age"
               autoComplete="age"
-              autoFocus
-              validators={["required", "isAge"]}
-              errorMessages={["this field is required", "age is not valid"]}
+              errorText={errors.age}
             />
-            <TextValidator
+            <Input
               onChange={e => setGender(e.target.value)}
               value={gender}
               variant="outlined"
-              onSubmit={regSubmitHandler}
-              onError={errors => console.log(errors)}
               margin="normal"
+              required
               fullWidth
-              id="gender"
-              label="gender"
               name="gender"
-              type="gender"
+              label="Gender"
+              id="gender"
               autoComplete="gender"
-              autoFocus
-              validators={["required", "isGender"]}
-              errorMessgenders={[
-                "this field is required",
-                "gender is not valid"
-              ]}
+              errorText={errors.gender}
             />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}>
-              Register
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                {/* <Link href="#" variant="body2">
-                  Forgot password?
-                </Link> */}
-              </Grid>
-            </Grid>
+              Register></Button>
+            <Grid container></Grid>
             <Box mt={5}>
               <CurrentDate />
             </Box>
-          </ValidatorForm>
+          </form>
         </div>
       </Grid>
     </Grid>
