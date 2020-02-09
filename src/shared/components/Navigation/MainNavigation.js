@@ -13,7 +13,9 @@ import "./MainNavigation.css";
 //Backdrop
 
 const MainNavigation = props => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { /**
+    user,
+  */ logoutUser } = useContext(AuthContext);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const openDrawerHandler = () => {
@@ -47,11 +49,13 @@ const MainNavigation = props => {
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
-        <Button onClick = {e=> {
-          e.preventDefault();
-          logoutUser();
-        }}
-        >Logout</Button>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            logoutUser();
+          }}>
+          Logout
+        </Button>
       </MainHeader>
     </React.Fragment>
   );

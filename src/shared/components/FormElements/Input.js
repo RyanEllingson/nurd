@@ -1,6 +1,5 @@
 import React, { useReducer } from "react";
 
-import { validate } from "../../util/validators";
 import "./Input.css";
 
 const inputUser = (state, action) => {
@@ -8,8 +7,7 @@ const inputUser = (state, action) => {
     case "CHANGE":
       return {
         ...state,
-        value: action.val,
-        inputIsValid: validate(action.val, action.validators)
+        value: action.val
       };
     case "TOUCH": {
       return {
@@ -24,7 +22,7 @@ const inputUser = (state, action) => {
 
 const Input = props => {
   const [inputState, dispatch] = useReducer(inputUser, {
-    value: "",
+    value: props.value,
     isTouched: false,
     inputIsValid: false
   });
@@ -32,8 +30,7 @@ const Input = props => {
   const changeHandler = event => {
     dispatch({
       type: "CHANGE",
-      val: event.target.value,
-      validators: props.validators
+      val: event.target.value
     });
   };
 
@@ -66,15 +63,10 @@ const Input = props => {
     );
 
   return (
-    <div
-      className={`form-control ${!inputState.inputIsValid &&
-        inputState.isTouched &&
-        "form-control--invalid"}`}>
+    <div className={`form-control`}>
       <label htmlFor={props.id}>{props.label}</label>
       {element}
-      {!inputState.inputIsValid && inputState.isTouched && (
-        <p>{props.errorText}</p>
-      )}
+      {/* {!inputState.inputIsValid && inputState.isTouched && <p>{props.value}</p>} */}
     </div>
   );
 };

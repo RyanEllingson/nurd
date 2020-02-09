@@ -17,6 +17,7 @@ export const logoutUser = setUser => {
 };
 
 export const loginUser = (setUser, setErrors) => userData => {
+  console.log(userData);
   axios
     .post("https://ryan-nurd-be.herokuapp.com/api/users/login", userData)
     .then(res => {
@@ -41,7 +42,7 @@ export const loginUser = (setUser, setErrors) => userData => {
 export const registerUser = setErrors => (userData, history) => {
   console.log(userData);
   axios
-    .post("http://localhost:5000/api/users/register", userData)
+    .post("https://ryan-nurd-be.herokuapp.com/api/users/register", userData)
     .then(res => history.push("/login"))
     .catch(err => {
       console.log(err);
