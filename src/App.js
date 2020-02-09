@@ -15,6 +15,7 @@ import SearchGroups from "./groups/pages/SearchGroups";
 import NewGroup from "./groups/pages/NewGroup";
 import UserGroups from "./groups/pages/UserGroups";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import PrivateRoute from "./shared/components/PrivateRoute/PrivateRoute";
 
 import { Auth } from "./auth/auth";
 
@@ -30,13 +31,13 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={UserGroups} />
 
-            <Route exact path="/search/" component={SearchGroups} />
+            <PrivateRoute exact path="/search/" component={SearchGroups} />
 
-            <Route exact path="/:userId/groups" component={UserGroups} />
+            <PrivateRoute exact path="/:userId/groups" component={UserGroups} />
 
-            <Route exact path="/:userId/profile" component={Users} />
+            <PrivateRoute exact path="/:userId/profile" component={Users} />
 
-            <Route exact path="/groups/new" component={NewGroup} />
+            <PrivateRoute exact path="/groups/new" component={NewGroup} />
 
             <Route exact path="/login" component={LoginAuth} />
 
