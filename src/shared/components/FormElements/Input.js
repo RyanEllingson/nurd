@@ -9,7 +9,7 @@ const inputUser = (state, action) => {
       return {
         ...state,
         value: action.val,
-        isValid: validate(action.val, action.validators)
+        inputIsValid: validate(action.val, action.validators)
       };
     case "TOUCH": {
       return {
@@ -26,7 +26,7 @@ const Input = props => {
   const [inputState, dispatch] = useReducer(inputUser, {
     value: "",
     isTouched: false,
-    isValid: false
+    inputIsValid: false
   });
 
   const changeHandler = event => {
@@ -65,12 +65,14 @@ const Input = props => {
 
   return (
     <div
-      className={`form-control ${!inputState.isValid &&
+      className={`form-control ${!inputState.inputIsValid &&
         inputState.isTouched &&
         "form-control--invalid"}`}>
       <label htmlFor={props.id}>{props.label}</label>
       {element}
-      {!inputState.isValid && inputState.isTouched && <p>{props.errorText}</p>}
+      {!inputState.inputIsValid && inputState.isTouched && (
+        <p>{props.errorText}</p>
+      )}
     </div>
   );
 };

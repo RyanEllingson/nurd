@@ -7,9 +7,9 @@ import {
   VALIDATOR_MINLENGTH
 } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
-
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
+// import Button from "../../shared/components/FormElements/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -67,23 +67,23 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2)
   }
 }));
-
+// refer to NewGroup.js for inputhandler and formReducer
 const LoginAuth = () => {
   const classes = useStyles();
   const [formState, inputHandler] = useForm(
     {
       email: {
         value: "",
-        isValid: false
+        inputIsValid: false
       },
       password: {
         value: "",
-        isValid: false
+        inputIsValid: false
       }
     },
     false
   );
-  const authSubmitHandler = event => {
+  const loginSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
   };
@@ -100,7 +100,7 @@ const LoginAuth = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form onSubmit={authSubmitHandler} className={classes.form}>
+          <form onSubmit={loginSubmitHandler} className={classes.form}>
             <Input
               onInput={inputHandler}
               variant="outlined"
@@ -140,7 +140,8 @@ const LoginAuth = () => {
               variant="contained"
               color="primary"
               className={classes.submit}
-              disabled={!formState.isValid}>
+              // disabled={!formState.inputIsValid}>
+            >
               Sign In
             </Button>
             <Grid container>

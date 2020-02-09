@@ -8,24 +8,28 @@ import {
 } from "../../shared/util/validators";
 import "./NewGroup.css";
 
-const formReducer = (state, action) => {
+const userInputReducer = (state, action) => {
   switch (action.type) {
     case "INPUT_CHANGE":
-      let formIsValid = true;
+      let userFormIsValid = true;
       for (const inputId in state.inputs) {
         if (inputId === action.inputId) {
-          formIsValid = formIsValid && action.isValid;
+          userFormIsValid = userFormIsValid && action.inputIsValid;
         } else {
-          formIsValid = formIsValid && state.inputs[inputId].isValid;
+          userFormIsValid =
+            userFormIsValid && state.inputs[inputId].inputIsValid;
         }
       }
       return {
         ...state,
         inputs: {
           ...state.inputs,
-          [action.inputId]: { value: action.value, isValid: action.isValid }
+          [action.inputId]: {
+            value: action.value,
+            InputIsValid: action.inputIsValid
+          }
         },
-        isValid: formIsValid
+        inputIsValid: userFormIsValid
       };
     default:
       return state;
@@ -33,25 +37,25 @@ const formReducer = (state, action) => {
 };
 
 const NewGroup = () => {
-  const [formState, dispatch] = useReducer(formReducer, {
+  const [formState, dispatch] = useReducer(userInputReducer, {
     inputs: {
       title: {
         value: "",
-        isValid: false
+        inputIsValid: false
       },
       description: {
         value: "",
-        isValid: false
+        inputIsValid: false
       }
     },
-    isValid: false
+    inputIsValid: false
   });
 
-  const inputHandler = useCallback((id, value, isValid) => {
+  const inputHandler = useCallback((id, value, inputIsValid) => {
     dispatch({
       type: "INPUT_CHANGE",
       value: value,
-      isValid: isValid,
+      inputIsValid: inputIsValid,
       inputId: id
     });
   }, []);
@@ -97,7 +101,7 @@ const NewGroup = () => {
         errorText="Please enter a valid username."
         onInput={inputHandler}
       />
-      <Button type="submit" disabled={!formState.isValid}>
+      <Button type="submit" disabled={!formState.inputIsValid}>
         CREATE
       </Button>
     </form>
