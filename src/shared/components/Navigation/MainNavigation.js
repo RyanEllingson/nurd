@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../auth/auth";
 
 import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import SideBar from "./SideBar";
 import Backdrop from "../UIElements/Backdrop";
+import Button from "../FormElements/Button";
 import "./MainNavigation.css";
 
 //creating different state for mobile view. When in mobile- onclick of hamburger icon, sidedrawer is opened or closed.
 //Backdrop
 
 const MainNavigation = props => {
+  const { user, logoutUser } = useContext(AuthContext);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const openDrawerHandler = () => {
@@ -44,6 +47,11 @@ const MainNavigation = props => {
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
+        <Button onClick = {e=> {
+          e.preventDefault();
+          logoutUser();
+        }}
+        >Logout</Button>
       </MainHeader>
     </React.Fragment>
   );

@@ -19,6 +19,7 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import {Auth} from "./auth/auth";
 
 import LoginAuth from "./user/pages/LoginAuth";
+import Register from "./user/pages/Register"
 const App = () => {
   return (
     <Auth>
@@ -27,32 +28,19 @@ const App = () => {
       <MainNavigation />
       <main>
         <Switch>
-          <Route path="/" exact>
-            <UserGroups />
-          </Route>
-          <Route path="/search/" exact>
-            <SearchGroups />
-          </Route>
-          <Route path="/:userId/groups" exact>
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-          </Route>
-          <Route path="/:userId/profile" exact>
-            <Users />
-          </Route>
-          <Route path="/groups/new" exact>
-            <NewGroup />
-          </Route>
-          <Route path="/auth" exact>
-            <LoginAuth />
-          </Route>
+          <Route exact path="/" component={UserGroups} />
+            
+          <Route exact path="/search/" component={SearchGroups} />
+            
+          <Route exact path="/:userId/groups" component={UserGroups} />
+           
+          <Route exact path="/:userId/profile" component={Users} />
+            
+          <Route exact path="/groups/new" component={NewGroup} />
+            
+          <Route exact path="/auth" component={LoginAuth} />
+           
+          <Route exact path="/register" component={Register} />
           <Redirect to="/" />
         </Switch>
       </main>
