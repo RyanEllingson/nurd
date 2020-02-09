@@ -159,6 +159,7 @@ const Register = ({ history }) => {
                 autoFocus
                 validators={[VALIDATOR_REQUIRE()]}
             />
+            {/* <input onChange={e=>setName(e.target.value)} value={name} /> */}
             <Input
             //   onInput={inputHandler}
                 onChange={e=>setEmail(e.target.value)}

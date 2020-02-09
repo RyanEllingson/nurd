@@ -38,7 +38,7 @@ const App = () => {
             
           <Route exact path="/groups/new" component={NewGroup} />
             
-          <Route exact path="/auth" component={LoginAuth} />
+          <Route exact path="/login" component={LoginAuth} />
            
           <Route exact path="/register" component={Register} />
           <Redirect to="/" />
