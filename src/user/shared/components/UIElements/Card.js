@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Card.css";
 // import Card from "react-bulma-components/lib/components/card";
 //will default to previous styling for now to fix Card error
