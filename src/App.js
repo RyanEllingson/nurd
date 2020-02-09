@@ -23,7 +23,7 @@ import Register from "./user/pages/Register"
 const App = () => {
   return (
     <Auth>
-    /* ensures that path is exact and will redirect user from landing on unsupported pages */
+    {/* ensures that path is exact and will redirect user from landing on unsupported pages */}
     <Router>
       <MainNavigation />
       <main>
