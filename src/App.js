@@ -15,44 +15,37 @@ import SearchGroups from "./groups/pages/SearchGroups";
 import NewGroup from "./groups/pages/NewGroup";
 import UserGroups from "./groups/pages/UserGroups";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+
+import {Auth} from "./auth/auth";
+
 import LoginAuth from "./user/pages/LoginAuth";
+import Register from "./user/pages/Register"
 const App = () => {
   return (
+    <Auth>
     /* ensures that path is exact and will redirect user from landing on unsupported pages */
     <Router>
       <MainNavigation />
       <main>
         <Switch>
-          <Route path="/" exact>
-            <UserGroups />
-          </Route>
-          <Route path="/search/" exact>
-            <SearchGroups />
-          </Route>
-          <Route path="/:userId/groups" exact>
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-            <UserGroups />
-          </Route>
-          <Route path="/:userId/profile" exact>
-            <Users />
-          </Route>
-          <Route path="/groups/new" exact>
-            <NewGroup />
-          </Route>
-          <Route path="/auth" exact>
-            <LoginAuth />
-          </Route>
+          <Route exact path="/" component={UserGroups} />
+            
+          <Route exact path="/search/" component={SearchGroups} />
+            
+          <Route exact path="/:userId/groups" component={UserGroups} />
+           
+          <Route exact path="/:userId/profile" component={Users} />
+            
+          <Route exact path="/groups/new" component={NewGroup} />
+            
+          <Route exact path="/login" component={LoginAuth} />
+           
+          <Route exact path="/register" component={Register} />
           <Redirect to="/" />
         </Switch>
       </main>
     </Router>
+    </Auth>
   );
 };
 export default App;

@@ -28,7 +28,10 @@ const NavLinks = props => {
         <NavLink to="/groups/new">CREATE GROUPS</NavLink>
       </li>
       <li>
-        <NavLink to="/auth"> AUTHENTICATE</NavLink>
+        <NavLink to="/register">REGISTER</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login"> AUTHENTICATE</NavLink>
       </li>
     </ul>
   );

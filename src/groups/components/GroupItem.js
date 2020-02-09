@@ -4,6 +4,7 @@ import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
 import "./GroupItem.css";
+import "../../shared/components/UIElements/Modal.css";
 
 const GroupItem = props => {
   const [showMap, setMap] = useState(false);
@@ -18,7 +19,7 @@ const GroupItem = props => {
         onCancel={closeMapHandler}
         header={props.address}
         contentClass="group-item__modal-content"
-        footerClass="place-item__modal-actions"
+        footerClass="group-item__modal-actions"
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}>
         <div className="map-container"></div>
         <h2>THE MAP!</h2>
