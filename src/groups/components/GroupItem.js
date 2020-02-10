@@ -7,7 +7,7 @@ import Card from "../../shared/components/UIElements/Card";
 // import Button from "react-bootstrap/Button";
 // import Button from "../../shared/components/FormElements/Button";
 // import Modal from "../../shared/components/UIElements/Modal";
-import "../../routes/apiRoutes";
+import routes from "../../routes/apiRoutes";
 import "./GroupItem.css";
 // import "../../shared/components/UIElements/Modal.css";
 
@@ -15,32 +15,9 @@ import "./GroupItem.css";
 export default class GroupItem extends Component {
   constructor(props) {
     super(props);
-    this.deleteGroup = this.deleteGroup.bind(this);
+    routes.deleteGroup = routes.deleteGroup.bind(this);
   }
   
-  deleteGroup: function(groupId) {
-    return axios
-    .delete(`https://ryan-nurd-be.herokuapp.com/api/groups/${groupId}`)
-    .then(res => {
-      console.log(res);
-    });
-  }
-
-  deleteGroupApi(groupId) {
-    return axios
-      .delete(
-        `https://ryan-nurd-be.herokuapp.com/api/groups/${groupId}` +
-          this.props._id,
-        console.log("clicked")
-      )
-      .then(res => {
-        console.log("Student successfully deleted!");
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
   render() {
     return (
       <React.Fragment>
