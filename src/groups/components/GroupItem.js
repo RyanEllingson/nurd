@@ -15,7 +15,15 @@ import "./GroupItem.css";
 export default class GroupItem extends Component {
   constructor(props) {
     super(props);
-    this.deleteGroupApi = this.deleteGroupApi.bind(this);
+    this.deleteGroup = this.deleteGroup.bind(this);
+  }
+  
+  deleteGroup: function(groupId) {
+    return axios
+    .delete(`https://ryan-nurd-be.herokuapp.com/api/groups/${groupId}`)
+    .then(res => {
+      console.log(res);
+    });
   }
 
   deleteGroupApi(groupId) {
