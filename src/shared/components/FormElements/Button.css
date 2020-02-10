@@ -1,8 +1,4 @@
-@import "/node_modules/bulma/bulma.sass"
-
-
-
-/* .button {
+.button {
   font: inherit;
   padding: 0.5rem 1.5rem;
   border: 1px solid #0c2196;
@@ -65,8 +61,7 @@
 
 .button--big {
   font-size: 1.5rem;
-} */
-
+}
 
 /* button {
   font-family: "Uncial Antiqua", cursive;

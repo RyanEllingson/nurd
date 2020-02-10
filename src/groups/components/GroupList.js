@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import Card from "../../shared/components/UIElements/Card";
 import GroupItem from "./GroupItem";
@@ -7,9 +7,10 @@ import routes from "../../routes/apiRoutes";
 
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
-
+  
   useEffect(() => {
-    routes.getAllGroups().then(function(response) {
+    routes.getAllGroups()
+    .then(function(response) {
       console.log(response.data);
       setGroups(response.data);
     });
@@ -25,7 +26,7 @@ const GroupList = () => {
       </div>
     );
   }
-
+  
   return (
     <ul className="group-list">
       {groups.map(group => (
