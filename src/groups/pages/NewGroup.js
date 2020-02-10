@@ -1,6 +1,7 @@
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button, Columns, Heading, Control, Form } from 'react-bulma-components';
 import React, { useState } from "react";
+import "./NewGroup.css"
 
 
 
@@ -42,14 +43,14 @@ const NewGroup = () => {
   ));
   return (
     <React.Fragment>
-      <Columns>
+      <Columns className='is-centered  formM'>
         <Columns.Column className='has-text-centered'>
           <Heading>
             Create an Account
         </Heading>
-          <Form.Field>
+          <Form.Field onSubmit={handleSubmit}>
             <div className="Control">
-              <input
+            <input className="input"
                 placeholder="type of game"
                 name="type"
                 value={inputGroup.type}
@@ -59,7 +60,7 @@ const NewGroup = () => {
           </Form.Field>
           <Form.Field>
           <div className="Control">
-              <input
+              <input className="input"
                 placeholder="group name"
                 name="groupName"
                 value={inputGroup.groupName}
@@ -69,7 +70,7 @@ const NewGroup = () => {
           </Form.Field>
           <Form.Field>
           <div className="Control">
-              <input
+          <input className="input"
                 placeholder="game title"
                 name="title"
                 value={inputGroup.title}
@@ -79,7 +80,7 @@ const NewGroup = () => {
           </Form.Field>
           <Form.Field>
           <div className="Control">
-              <input
+          <input className="input"
                 placeholder="address"
                 name="location"
                 value={inputGroup.location}
@@ -89,7 +90,7 @@ const NewGroup = () => {
           </Form.Field>
           <Form.Field>
           <div className="Control">
-              <input
+          <input className="input"
                 placeholder="gender"
                 name="gender"
                 value={inputGroup.gender}
@@ -99,7 +100,7 @@ const NewGroup = () => {
           </Form.Field>
           <Form.Field>
           <div className="Control">
-              <input
+          <input className="input"
                 placeholder="min age requirement"
                 name="minAge"
                 value={inputGroup.minAge}
