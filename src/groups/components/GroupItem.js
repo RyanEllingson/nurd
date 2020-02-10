@@ -9,9 +9,8 @@ import Card from "../../shared/components/UIElements/Card";
 // import Modal from "../../shared/components/UIElements/Modal";
 import "../../routes/apiRoutes";
 import "./GroupItem.css";
-import "../../shared/components/UIElements/Modal.css";
+// import "../../shared/components/UIElements/Modal.css";
 
-<<<<<<< HEAD
 // const GroupItem = props => {
 export default class GroupItem extends Component {
   constructor(props) {
@@ -21,13 +20,16 @@ export default class GroupItem extends Component {
 
   deleteGroupApi(groupId) {
     return axios
-      .delete(`https://localhost:5000/api/groups/${groupId}` + this.props._id)
+      .delete(
+        `https://ryan-nurd-be.herokuapp.com/api/groups/${groupId}` +
+          this.props._id,
+        console.log("clicked")
+      )
       .then(res => {
-        console.log("Group successfully deleted!", res);
+        console.log("Student successfully deleted!");
       })
       .catch(error => {
         console.log(error);
-        console.log("clicked");
       });
   }
 
@@ -49,7 +51,7 @@ export default class GroupItem extends Component {
               <div className="group-item__actions">
                 <Link to={"/api/groups/:id" + this.props._id}>Edit</Link>
                 <button
-                  onClick={this.deleteGroupApi}
+                  onClick={e => this.deleteGroupApi(this.props._id)}
                   size="sm"
                   variant="danger">
                   Delete
@@ -60,63 +62,21 @@ export default class GroupItem extends Component {
         </main>
       </React.Fragment>
     );
-
-    // <tr>
-    //   <td>{this.props.obj.name}</td>
-    //   <td>{this.props.obj.email}</td>
-    //   <td>{this.props.obj.rollno}</td>
-    //   <td>
-    //     <Link
-    //       className="edit-link"
-    //       to={"/edit-student/" + this.props.obj._id}>
-    //       Edit
-    //     </Link>
-    //     <Button onClick={this.deleteStudent} size="sm" variant="danger">
-    //       Delete
-    //     </Button>
-    //   </td>
-    // </tr>
   }
+
+  // <tr>
+  //   <td>{this.props.obj.name}</td>
+  //   <td>{this.props.obj.email}</td>
+  //   <td>{this.props.obj.rollno}</td>
+  //   <td>
+  //     <Link
+  //       className="edit-link"
+  //       to={"/edit-student/" + this.props.obj._id}>
+  //       Edit
+  //     </Link>
+  //     <Button onClick={this.deleteStudent} size="sm" variant="danger">
+  //       Delete
+  //     </Button>
+  //   </td>
+  // </tr>
 }
-
-// };
-// export default GroupItem;
-
-// organizer: {
-//     type: String,
-//     required: true
-//   },
-//   groupTitle: {
-//     type: String,
-//     required: true
-//   },
-//   gameTitle: {
-//     type: String,
-//     required: true
-//   },
-//   location: {
-//       type: String,
-//       required: true
-//   },
-//   gameType: {
-//     type: String,
-//     required: true
-//   },
-//   minimumAge: {
-//     type: Number
-//   },
-//   requiredGender: {
-//     type: String
-//   },
-//   maxMembers: {
-//     type: Number,
-//     default: 0
-//   },
-//   description: {
-//     type: String
-//   },
-//   currentMembers: {
-//     type: Array,
-//     default: []
-//   }
-// });
