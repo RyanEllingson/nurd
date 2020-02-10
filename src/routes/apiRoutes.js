@@ -26,11 +26,7 @@ export default {
     });
   },
   getAllGroups: function() {
-    return axios
-    .get("https://ryan-nurd-be.herokuapp.com/api/groups")
-    .then(res => {
-      console.log(res);
-    });
+    return axios.get("https://ryan-nurd-be.herokuapp.com/api/groups");
   },
   getGroupsByType: function(searchType) {
     return axios
