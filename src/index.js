@@ -6,7 +6,7 @@ import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
 // Health check
-Axios.get("Http://localhost:5000/ping")
+Axios.get("https://ryan-nurd-be.herokuapp.com/ping")
   .then(() => {
     console.log("should be working");
   })

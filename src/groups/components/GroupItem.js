@@ -11,6 +11,7 @@ import "../../routes/apiRoutes";
 import "./GroupItem.css";
 import "../../shared/components/UIElements/Modal.css";
 
+<<<<<<< HEAD
 // const GroupItem = props => {
 export default class GroupItem extends Component {
   constructor(props) {
