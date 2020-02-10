@@ -1,4 +1,9 @@
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Button, Columns, Heading, Control, Form } from 'react-bulma-components';
 import React, { useState } from "react";
+import "./NewGroup.css"
+
+
 
 const NewGroup = () => {
   let [inputGroup, setInputGroup] = useState({
@@ -38,47 +43,79 @@ const NewGroup = () => {
   ));
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="type of game"
-          name="type"
-          value={inputGroup.type}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="group name"
-          name="groupName"
-          value={inputGroup.groupName}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="game title"
-          name="title"
-          value={inputGroup.title}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="address"
-          name="location"
-          value={inputGroup.location}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="gender"
-          name="gender"
-          value={inputGroup.gender}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="min age requirement"
-          name="minAge"
-          value={inputGroup.minAge}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <button>Create Group</button>
-      </form>
+      <Columns className='is-centered  formM'>
+        <Columns.Column className='has-text-centered'>
+          <Heading>
+            Create an Account
+        </Heading>
+          <Form.Field onSubmit={handleSubmit}>
+            <div className="Control">
+            <input className="input"
+                placeholder="type of game"
+                name="type"
+                value={inputGroup.type}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Form.Field>
+          <div className="Control">
+              <input className="input"
+                placeholder="group name"
+                name="groupName"
+                value={inputGroup.groupName}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Form.Field>
+          <div className="Control">
+          <input className="input"
+                placeholder="game title"
+                name="title"
+                value={inputGroup.title}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Form.Field>
+          <div className="Control">
+          <input className="input"
+                placeholder="address"
+                name="location"
+                value={inputGroup.location}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Form.Field>
+          <div className="Control">
+          <input className="input"
+                placeholder="gender"
+                name="gender"
+                value={inputGroup.gender}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Form.Field>
+          <div className="Control">
+          <input className="input"
+                placeholder="min age requirement"
+                name="minAge"
+                value={inputGroup.minAge}
+                onChange={handleChange}
+              />
+            </div>
+          </Form.Field>
+          <Button.Group>
+            <Button fullwidth rounded color="primary" onClick={() => console.log(Form)}>Login</Button>
+          </Button.Group>
+        </Columns.Column>
+        <Columns.Column className="is-hidden-mobile has-text-centered">
+          Right Stuff
+      </Columns.Column>
+      </Columns>;
       {groups}
     </React.Fragment>
   );
