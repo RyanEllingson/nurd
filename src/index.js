@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./App.js";
 import Axios from "axios";
 
-import "bootstrap/dist/css/bootstrap.css";
-
 // Health check
 Axios.get("https://ryan-nurd-be.herokuapp.com/ping")
   .then(() => {
