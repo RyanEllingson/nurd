@@ -4,7 +4,7 @@ import App from "./App.js";
 import Axios from "axios";
 
 // Health check
-Axios.get("Http://localhost:5000/ping")
+Axios.get("https://ryan-nurd-be.herokuapp.com/ping")
   .then(() => {
     console.log("should be working");
   })
