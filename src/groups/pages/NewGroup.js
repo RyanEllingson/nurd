@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import Card from "react-bootstrap/Card";
 
 const NewGroup = () => {
   let [inputGroup, setInputGroup] = useState({
+    organizer: "",
     type: "",
-    groupName: "",
-    title: "",
-    groupDescription: "",
+    groupTitle: "",
+    gameTitle: "",
+    description: "",
     location: "",
-    gender: "",
-    minAge: ""
+    requiredGender: "",
+    minimumAge: ""
   });
   let [createGroup, setCreateGroup] = useState([]);
 
@@ -22,6 +24,7 @@ const NewGroup = () => {
       };
     });
   }
+
   //add the input data to createGroup array
   function handleSubmit(event) {
     event.preventDefault();
@@ -31,10 +34,21 @@ const NewGroup = () => {
   // console.log(createGroup)
 
   const groups = createGroup.map(group => (
-    <h2 key={group.groupName}>
-      {group.type} {group.groupName} {group.title}
-      {group.description} {group.location} {group.gender} {group.minAge}
-    </h2>
+    <div>
+      <Card key={group.organizer} style={{ width: "25rem" }}>
+        <Card classname="header">{group.groupName}</Card>
+        <ul className="list-group" variant="flush">
+          <li className="list-group-Item"> {group.groupName}</li>
+          <li className="list-group-Item">{group.title}</li>
+          <li className="list-group-Item">{group.location}</li>
+          <li className="list-group-Item">{group.requiredGender}</li>
+          <li className="list-group-Item">{group.minimumAge}</li>
+        </ul>
+        <button type="submit" className="btn btn-primary">
+          Primary
+        </button>
+      </Card>
+    </div>
   ));
   return (
     <React.Fragment>
@@ -79,6 +93,7 @@ const NewGroup = () => {
         <br />
         <button>Create Group</button>
       </form>
+
       {groups}
     </React.Fragment>
   );

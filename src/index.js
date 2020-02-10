@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App.js";
 import Axios from "axios";
 
+import "bootstrap/dist/css/bootstrap.css";
+
 // Health check
 Axios.get("Http://localhost:5000/ping")
   .then(() => {
