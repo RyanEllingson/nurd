@@ -13,9 +13,7 @@ import "./MainNavigation.css";
 //Backdrop
 
 const MainNavigation = props => {
-  const { /**
-    user,
-  */ logoutUser } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const openDrawerHandler = () => {
@@ -45,6 +43,9 @@ const MainNavigation = props => {
         </button>
         <h1 className="main-navigation__title">
           <Link to="/">Game Realm</Link>
+        </h1>
+        <h1 className="main-navigation__title">
+          {user ? `Hello ${user.name}!` : ""}
         </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks />

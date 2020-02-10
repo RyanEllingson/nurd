@@ -57,6 +57,7 @@ const LoginAuth = ({ history }) => {
   useEffect(() => {
     // If user is logged in and navigates to login page, reroute to default page
     if (user) {
+      console.log(user);
       history.push("/");
     }
   }, [user, history]);
