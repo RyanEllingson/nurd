@@ -1,19 +1,24 @@
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button, Columns, Heading, Control, Form } from 'react-bulma-components';
 import React, { useState } from "react";
+<<<<<<< HEAD
+import Card from "react-bootstrap/Card";
+=======
 import "./NewGroup.css"
 
 
+>>>>>>> 0253bee1f9d47544fedecbe3f99aaab789358e5e
 
 const NewGroup = () => {
   let [inputGroup, setInputGroup] = useState({
+    organizer: "",
     type: "",
-    groupName: "",
-    title: "",
-    groupDescription: "",
+    groupTitle: "",
+    gameTitle: "",
+    description: "",
     location: "",
-    gender: "",
-    minAge: ""
+    requiredGender: "",
+    minimumAge: ""
   });
   let [createGroup, setCreateGroup] = useState([]);
 
@@ -27,6 +32,7 @@ const NewGroup = () => {
       };
     });
   }
+
   //add the input data to createGroup array
   function handleSubmit(event) {
     event.preventDefault();
@@ -36,13 +42,68 @@ const NewGroup = () => {
   // console.log(createGroup)
 
   const groups = createGroup.map(group => (
-    <h2 key={group.groupName}>
-      {group.type} {group.groupName} {group.title}
-      {group.description} {group.location} {group.gender} {group.minAge}
-    </h2>
+    <div>
+      <Card key={group.organizer} style={{ width: "25rem" }}>
+        <Card classname="header">{group.groupName}</Card>
+        <ul className="list-group" variant="flush">
+          <li className="list-group-Item"> {group.groupName}</li>
+          <li className="list-group-Item">{group.title}</li>
+          <li className="list-group-Item">{group.location}</li>
+          <li className="list-group-Item">{group.requiredGender}</li>
+          <li className="list-group-Item">{group.minimumAge}</li>
+        </ul>
+        <button type="submit" className="btn btn-primary">
+          Primary
+        </button>
+      </Card>
+    </div>
   ));
   return (
     <React.Fragment>
+<<<<<<< HEAD
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder="type of game"
+          name="type"
+          value={inputGroup.type}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="group name"
+          name="groupName"
+          value={inputGroup.groupName}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="game title"
+          name="title"
+          value={inputGroup.title}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="address"
+          name="location"
+          value={inputGroup.location}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="gender"
+          name="gender"
+          value={inputGroup.gender}
+          onChange={handleChange}
+        />
+        <input
+          placeholder="min age requirement"
+          name="minAge"
+          value={inputGroup.minAge}
+          onChange={handleChange}
+        />
+        <br />
+        <br />
+        <button>Create Group</button>
+      </form>
+
+=======
       <Columns className='is-centered  formM'>
         <Columns.Column className='has-text-centered'>
           <Heading>
@@ -116,6 +177,7 @@ const NewGroup = () => {
           Right Stuff
       </Columns.Column>
       </Columns>;
+>>>>>>> 0253bee1f9d47544fedecbe3f99aaab789358e5e
       {groups}
     </React.Fragment>
   );
