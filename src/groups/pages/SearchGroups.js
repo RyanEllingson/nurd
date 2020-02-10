@@ -50,6 +50,7 @@ const DUMMY_SEARCH = [
 ];
 
 const SearchGroups = () => {
+
   // const userId = useParams().userId;
   const loadedGroups = DUMMY_SEARCH.filter(group => group.creator);
   return <GroupList items={loadedGroups} />;

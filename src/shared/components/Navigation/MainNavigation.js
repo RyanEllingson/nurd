@@ -44,14 +44,19 @@ const MainNavigation = props => {
         <h1 className="main-navigation__title">
           <Link to="/">Game Realm</Link>
         </h1>
+        <h1 className="main-navigation__title">
+          {user ? `Hello ${user.name}!` : ""}
+        </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
-        <Button onClick = {e=> {
-          e.preventDefault();
-          logoutUser();
-        }}
-        >Logout</Button>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            logoutUser();
+          }}>
+          Logout
+        </Button>
       </MainHeader>
     </React.Fragment>
   );

@@ -1,21 +1,11 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-
 import Input from "../../shared/components/FormElements/Input";
-import {
-  VALIDATOR_EMAIL,
-  VALIDATOR_MINLENGTH,
-  VALIDATOR_REQUIRE
-} from "../../shared/util/validators";
-import { useForm } from "../../shared/hooks/form-hook";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -23,19 +13,6 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import CurrentDate from "../../shared/components/Navigation/CurrentDate";
 import { makeStyles } from "@material-ui/core/styles";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -81,49 +58,21 @@ const Register = ({ history }) => {
   const [gender, setGender] = useState("");
 
   useEffect(() => {
-      if (user) {
-        //   console.log("shiboopy");
-          history.push("/");
-      }
+    if (user) {
+      //   console.log("shiboopy");
+      history.push("/");
+    }
   }, [user, history]);
-//   const [formState, inputHandler] = useForm(
-//     {
-//       name: {
-//           value: "",
-//           inputIsValid: true
-//       },
-//       email: {
-//         value: "",
-//         inputIsValid: true
-//       },
-//       password: {
-//         value: "",
-//         inputIsValid: true
-//       },
-//       password2: {
-//           value: "",
-//           inputIsValid: true
-//       },
-//       age: {
-//           value: "",
-//           inputIsValid: true
-//       },
-//       gender: {
-//           value: "",
-//           inputIsValid: true
-//       }
-//     },
-//     false
-//   );
+
   const regSubmitHandler = event => {
     event.preventDefault();
     const newUser = {
-        name: name,
-        email: email,
-        password: password,
-        password2: password2,
-        age: age,
-        gender: gender
+      name: name,
+      email: email,
+      password: password,
+      password2: password2,
+      age: age,
+      gender: gender
     };
     console.log(newUser);
     registerUser(newUser, history);
@@ -143,27 +92,23 @@ const Register = ({ history }) => {
           </Typography>
           <form onSubmit={regSubmitHandler} className={classes.form}>
             <Input
-                // onInput={inputHandler}
-                onChange={e=>setName(e.target.value)}
-                value={name}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="User Name"
-                name="name"
-                autoComplete="name"
-                error={errors.name}
-                errorText={errors.name}
-                autoFocus
-                validators={[VALIDATOR_REQUIRE()]}
+              onChange={e => setName(e.target.value)}
+              value={name}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="User Name"
+              name="name"
+              autoComplete="name"
+              error={errors.name}
+              errorText={errors.name}
+              autoFocus
             />
-            {/* <input onChange={e=>setName(e.target.value)} value={name} /> */}
             <Input
-            //   onInput={inputHandler}
-                onChange={e=>setEmail(e.target.value)}
-                value={email}
+              onChange={e => setEmail(e.target.value)}
+              value={email}
               variant="outlined"
               margin="normal"
               required
@@ -174,13 +119,12 @@ const Register = ({ history }) => {
               autoComplete="email"
               errorText={errors.email}
               autoFocus
-              validators={[VALIDATOR_REQUIRE()]}
             />
 
             <Input
-            //   onInput={inputHandler}
-                onChange={e=>setPassword(e.target.value)}
-                value={password}
+              //   onInput={inputHandler}
+              onChange={e => setPassword(e.target.value)}
+              value={password}
               variant="outlined"
               margin="normal"
               required
@@ -191,12 +135,11 @@ const Register = ({ history }) => {
               id="password"
               autoComplete="current-password"
               errorText={errors.password}
-              validators={[VALIDATOR_REQUIRE()]}
             />
             <Input
-            //   onInput={inputHandler}
-                onChange={e=>setPassword2(e.target.value)}
-                value={password2}
+              //   onInput={inputHandler}
+              onChange={e => setPassword2(e.target.value)}
+              value={password2}
               variant="outlined"
               margin="normal"
               required
@@ -207,12 +150,10 @@ const Register = ({ history }) => {
               id="password2"
               autoComplete="current-password"
               errorText={errors.password2}
-              validators={[VALIDATOR_REQUIRE()]}
             />
             <Input
-            //   onInput={inputHandler}
-                onChange={e=>setAge(e.target.value)}
-                value={age}
+              onChange={e => setAge(e.target.value)}
+              value={age}
               variant="outlined"
               margin="normal"
               required
@@ -222,12 +163,10 @@ const Register = ({ history }) => {
               id="age"
               autoComplete="age"
               errorText={errors.age}
-              validators={[VALIDATOR_REQUIRE()]}
             />
             <Input
-            //   onInput={inputHandler}
-                onChange={e=>setGender(e.target.value)}
-                value={gender}
+              onChange={e => setGender(e.target.value)}
+              value={gender}
               variant="outlined"
               margin="normal"
               required
@@ -237,23 +176,14 @@ const Register = ({ history }) => {
               id="gender"
               autoComplete="gender"
               errorText={errors.gender}
-              validators={[VALIDATOR_REQUIRE()]}
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}>
-              Register
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                {/* <Link href="#" variant="body2">
-                  Forgot password?
-                </Link> */}
-              </Grid>
-            </Grid>
+              Register></Button>
+            <Grid container></Grid>
             <Box mt={5}>
               <CurrentDate />
             </Box>
