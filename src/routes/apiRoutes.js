@@ -32,9 +32,10 @@ export default {
       console.log(res);
     });
   },
-  addMember: function(memberName, groupId) {
+  addMember: function(memberId, memberName, groupId) {
     return axios
     .put(`https://ryan-nurd-be.herokuapp.com/api/groups/add-member/${groupId}`, {
+      id: memberId,
       name: memberName
     }).then(res => {
       console.log(res);
