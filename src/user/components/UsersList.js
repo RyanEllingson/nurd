@@ -7,6 +7,7 @@ import Card from "../../shared/components/UIElements/Card";
 import "./UsersList.css";
 
 let UsersList = props => {
+  console.log(props.items);
   if (props.items.length === 0) {
     return (
       <div className="center">
@@ -20,12 +21,12 @@ let UsersList = props => {
     <ul className="users-list">
       {props.items.map(user => (
         <UserItem
-          key={user.id}
-          id={user.id}
-          image={user.image}
+          key={user._id}
+          id={user._id}
+          // image={user.image}
           name={user.name}
           email={user.email}
-          groupCount={user.groups}
+          memberOf={user.memberOf}
         />
       ))}
     </ul>
