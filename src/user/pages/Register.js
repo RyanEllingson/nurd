@@ -6,7 +6,7 @@ import { AuthContext } from "../../auth/auth";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Paper from "@material-ui/core/Paper";
+// import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -18,11 +18,27 @@ const useStyles = makeStyles(theme => ({
   root: {
     height: "cover"
   },
+  layout: {
+    width: "auto",
+    justifyContent: "center",
+    // display: "block-inline",
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    background: "transparent",
+
+    [theme.breakpoints.up(400 + theme.spacing(2) * 2)]: {
+      width: 400,
+      marginLeft: "30%",
+      marginRight: "30%",
+      marginTop: "4%"
+    }
+  },
   paper: {
-    margin: theme.spacing(4, 4),
+    justifyContent: "center",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    margin: theme.spacing(3, 4)
   },
   // avatar: {
   //   margin: theme.spacing(1),
@@ -33,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: theme.spacing(5, 4)
+    marginTop: theme.spacing(2, 0, 2)
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
@@ -75,7 +91,16 @@ const Register = ({ history }) => {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid
+        className={classes.layout}
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        // component={Paper}
+        elevation={5}
+        padding={0.5}
+        square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
@@ -85,12 +110,12 @@ const Register = ({ history }) => {
           </Typography>
           <form onSubmit={regSubmitHandler} className={classes.form}>
             <input
+              className={classes.layout}
               onChange={e => setName(e.target.value)}
               value={name}
               variant="outlined"
               margin="normal"
               required
-              fullWidth
               id="name"
               label="User Name"
               placeholder="user name"
@@ -102,6 +127,7 @@ const Register = ({ history }) => {
               onBlur
             />
             <input
+              className={classes.layout}
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
@@ -119,7 +145,7 @@ const Register = ({ history }) => {
             />
 
             <input
-              //   onInput={inputHandler}
+              className={classes.layout}
               onChange={e => setPassword(e.target.value)}
               value={password}
               variant="outlined"
@@ -136,7 +162,7 @@ const Register = ({ history }) => {
               onBlur
             />
             <input
-              //   onInput={inputHandler}
+              className={classes.layout}
               onChange={e => setPassword2(e.target.value)}
               value={password2}
               variant="outlined"
@@ -153,6 +179,7 @@ const Register = ({ history }) => {
               onBlur
             />
             <input
+              className={classes.layout}
               onChange={e => setAge(e.target.value)}
               value={age}
               variant="outlined"
@@ -168,6 +195,7 @@ const Register = ({ history }) => {
               onBlur
             />
             <input
+              className={classes.layout}
               onChange={e => setGender(e.target.value)}
               value={gender}
               variant="outlined"
@@ -182,14 +210,14 @@ const Register = ({ history }) => {
               errortext={errors.gender}
               onBlur
             />
-            <Button type="submit" fullWidth variant="contained" color="primary">
+            <br />
+            <Button type="submit" fullwidth variant="contained" color="primary">
               Submit
             </Button>
             <Grid container></Grid>
-            <Box mt={5}>
-              <CurrentDate />
-            </Box>
+            <Box mt={5}></Box>
           </form>
+          <CurrentDate />
         </div>
       </Grid>
     </Grid>
