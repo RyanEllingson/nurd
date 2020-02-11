@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
 import "./NavLinks.css";
 
+import { AuthContext } from "../../../auth/auth";
+
 const NavLinks = props => {
+  //conditional rendering for user view only after login
+  const { user } = useContext(AuthContext);
   return (
     <ul className="nav-links">
       <li>
@@ -18,15 +21,9 @@ const NavLinks = props => {
           SEARCH
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/u1/groups">MY GROUPS</NavLink>
-      </li>
-      <li>
-        <NavLink to="/u1/profile">MY PROFILE</NavLink>
-      </li>
-      <li>
-        <NavLink to="/groups/new">CREATE GROUPS</NavLink>
-      </li>
+      <li>{user ? <NavLink to="/u1/groups">MY GROUPS</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/u1/profile">MY PROFILE</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/groups/new">CREATE GROUPS</NavLink> : " "} </li>
       <li>
         <NavLink to="/register">REGISTER</NavLink>
       </li>

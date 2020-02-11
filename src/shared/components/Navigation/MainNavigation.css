@@ -8,6 +8,7 @@
   justify-content: space-around;
   margin-right: 2rem;
   cursor: pointer;
+  color: white;
 }
 
 .main-navigation__menu-btn span {
