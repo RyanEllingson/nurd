@@ -11,6 +11,7 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import CurrentDate from "../../shared/components/Navigation/CurrentDate";
+import Register from "./Register";
 // import { makeStyles } from "@material-ui/core/styles";
 
 // import { Columns, Box } from "react-bulma-components";
@@ -93,7 +94,10 @@ const LoginAuth = ({ history }) => {
             </Button>
             <columns>
               <columns item>
-                <Link href="#" variant="body2">
+                <Link
+                  href="http://localhost:3000/register"
+                  type="link"
+                  variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </columns>

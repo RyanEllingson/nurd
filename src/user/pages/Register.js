@@ -1,12 +1,10 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-// import Input from "../../shared/components/FormElements/Input";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -16,12 +14,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "cover"
+    backgroundSize: "cover"
   },
   layout: {
     width: "auto",
     justifyContent: "center",
-    // display: "block-inline",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     background: "transparent",
@@ -124,7 +121,6 @@ const Register = ({ history }) => {
               error={errors.name}
               errortext={errors.name}
               autoFocus
-              onBlur
             />
             <input
               className={classes.layout}
@@ -141,7 +137,6 @@ const Register = ({ history }) => {
               autoComplete="email"
               errortext={errors.email}
               autoFocus
-              onBlur
             />
 
             <input
@@ -159,7 +154,6 @@ const Register = ({ history }) => {
               placeholder="password"
               autoComplete="current-password"
               errortext={errors.password}
-              onBlur
             />
             <input
               className={classes.layout}
@@ -176,7 +170,6 @@ const Register = ({ history }) => {
               id="password2"
               autoComplete="current-password"
               errortext={errors.password2}
-              onBlur
             />
             <input
               className={classes.layout}
@@ -192,7 +185,6 @@ const Register = ({ history }) => {
               placeholder="age"
               autoComplete="age"
               errortext={errors.age}
-              onBlur
             />
             <input
               className={classes.layout}
@@ -208,7 +200,6 @@ const Register = ({ history }) => {
               placeholder="gender"
               autoComplete="gender"
               errortext={errors.gender}
-              onBlur
             />
             <br />
             <Button type="submit" fullwidth variant="contained" color="primary">
