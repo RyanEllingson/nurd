@@ -11,7 +11,7 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
 import CurrentDate from "../../shared/components/Navigation/CurrentDate";
-import Register from "./Register";
+// import Register from "./Register";
 // import { makeStyles } from "@material-ui/core/styles";
 
 // import { Columns, Box } from "react-bulma-components";
@@ -25,7 +25,7 @@ const LoginAuth = ({ history }) => {
     // If user is logged in and navigates to login page, reroute to default page
     if (user) {
       console.log(user);
-      history.push("/");
+      history.push("/search");
     }
   }, [user, history]);
 

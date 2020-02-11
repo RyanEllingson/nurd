@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import CurrentDate from "../../shared/components/Navigation/CurrentDate";
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -66,7 +67,7 @@ const Register = ({ history }) => {
   useEffect(() => {
     if (user) {
       //   console.log("shiboopy");
-      history.push("/");
+      history.push("/search");
     }
   }, [user, history]);
 
@@ -205,6 +206,14 @@ const Register = ({ history }) => {
             <Button type="submit" fullwidth variant="contained" color="primary">
               Submit
             </Button>
+            <columns items>
+              <Link
+                href="http://localhost:3000/register"
+                type="link"
+                variant="body2">
+                {"Already have an account? Login"}
+              </Link>
+            </columns>
             <Grid container></Grid>
             <Box mt={5}></Box>
           </form>
