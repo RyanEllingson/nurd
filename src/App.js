@@ -31,7 +31,7 @@ const App = () => {
         <MainNavigation />
         <main>
           <Switch>
-            <Route exact path="/" component={UserGroups} />
+            <Route exact path="/" component={LoginAuth} />
 
             <PrivateRoute exact path="/search/" component={SearchGroups} />
 
@@ -41,7 +41,7 @@ const App = () => {
 
             <PrivateRoute exact path="/groups/new" component={NewGroup} />
 
-            <Route exact path="/login" component={LoginAuth} />
+            {/* <Route exact path="/login" component={LoginAuth} /> */}
 
             <Route exact path="/register" component={Register} />
             <Redirect to="/" />
