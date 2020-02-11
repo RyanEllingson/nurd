@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
 import "./GroupItem.css";
 import "../../shared/components/UIElements/Modal.css";
+import { AuthContext } from "../../auth/auth";
 
 const GroupItem = props => {
+  const {user} = useContext(AuthContext);
   // const [showMap, setMap] = useState(false);
 
   // const openMapHandler = () => setMap(true);
@@ -35,13 +37,13 @@ const GroupItem = props => {
             <p>{props.description}</p>
             <h3>{props.organizer}</h3>
           </div>
-          <div className="group-item__actions">
+          {user ? <div className="group-item__actions">
             {/* <Button inverse onClick={openMapHandler}>
               VIEW ON MAP
             </Button> */}
             {/* <Button to={`/groups/${props.id}`}>EDIT</Button> */}
-            <Button danger>DELETE</Button>
-          </div>
+            <Button onClick={props.onClick} danger>DELETE</Button>
+          </div> : ""}
         </Card>
       </li>
     </React.Fragment>
