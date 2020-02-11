@@ -1,7 +1,7 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-import Input from "../../shared/components/FormElements/Input";
+// import Input from "../../shared/components/FormElements/Input";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -91,7 +91,7 @@ const Register = ({ history }) => {
             Register
           </Typography>
           <form onSubmit={regSubmitHandler} className={classes.form}>
-            <Input
+            <input
               onChange={e => setName(e.target.value)}
               value={name}
               variant="outlined"
@@ -100,13 +100,15 @@ const Register = ({ history }) => {
               fullWidth
               id="name"
               label="User Name"
+              placeholder="user name"
               name="name"
               autoComplete="name"
               error={errors.name}
-              errorText={errors.name}
+              errortext={errors.name}
               autoFocus
+              onBlur
             />
-            <Input
+            <input
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
@@ -116,12 +118,14 @@ const Register = ({ history }) => {
               id="email"
               label="Email Address"
               name="email"
+              placeholder="email"
               autoComplete="email"
-              errorText={errors.email}
+              errortext={errors.email}
               autoFocus
+              onBlur
             />
 
-            <Input
+            <input
               //   onInput={inputHandler}
               onChange={e => setPassword(e.target.value)}
               value={password}
@@ -133,10 +137,12 @@ const Register = ({ history }) => {
               label="Password"
               type="password"
               id="password"
+              placeholder="password"
               autoComplete="current-password"
-              errorText={errors.password}
+              errortext={errors.password}
+              onBlur
             />
-            <Input
+            <input
               //   onInput={inputHandler}
               onChange={e => setPassword2(e.target.value)}
               value={password2}
@@ -147,11 +153,13 @@ const Register = ({ history }) => {
               name="password2"
               label="Confirm Password"
               type="password"
+              placeholder="confirm password"
               id="password2"
               autoComplete="current-password"
-              errorText={errors.password2}
+              errortext={errors.password2}
+              onBlur
             />
-            <Input
+            <input
               onChange={e => setAge(e.target.value)}
               value={age}
               variant="outlined"
@@ -161,10 +169,12 @@ const Register = ({ history }) => {
               name="age"
               label="Age"
               id="age"
+              placeholder="age"
               autoComplete="age"
-              errorText={errors.age}
+              errortext={errors.age}
+              onBlur
             />
-            <Input
+            <input
               onChange={e => setGender(e.target.value)}
               value={gender}
               variant="outlined"
@@ -174,15 +184,14 @@ const Register = ({ history }) => {
               name="gender"
               label="Gender"
               id="gender"
+              placeholder="gender"
               autoComplete="gender"
-              errorText={errors.gender}
+              errortext={errors.gender}
+              onBlur
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              Register></Button>
+            <Button type="submit" fullWidth variant="contained" color="primary">
+              Submit
+            </Button>
             <Grid container></Grid>
             <Box mt={5}>
               <CurrentDate />
