@@ -1,24 +1,14 @@
-<<<<<<< HEAD
-import React from "react";
-
+import React, { useContext } from "react";
+// import React, { useState, useContext } from "react";
+import { AuthContext } from "../../auth/auth";
 import Card from "../../shared/components/UIElements/Card";
 // import Button from "../../shared/components/FormElements/Button";
 // import Modal from "../../shared/components/UIElements/Modal";
 // import "./GroupItem.css";
 // import "../../shared/components/UIElements/Modal.css";
-=======
-import React, { useState, useContext } from "react";
-
-import Card from "../../shared/components/UIElements/Card";
-import Button from "../../shared/components/FormElements/Button";
-import Modal from "../../shared/components/UIElements/Modal";
-import "./GroupItem.css";
-import "../../shared/components/UIElements/Modal.css";
-import { AuthContext } from "../../auth/auth";
->>>>>>> 2c2e047d5e6861ec5328e77a0e3677644969d650
 
 const GroupItem = props => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // const [showMap, setMap] = useState(false);
 
   // const openMapHandler = () => setMap(true);
@@ -47,18 +37,15 @@ const GroupItem = props => {
             <p>{props.description}</p>
             <h3>{props.organizer}</h3>
           </div>
-          {user ? <div className="group-item__actions">
-            {/* <Button inverse onClick={openMapHandler}>
-              VIEW ON MAP
-            </Button> */}
-            {/* <Button to={`/groups/${props.id}`}>EDIT</Button> */}
-<<<<<<< HEAD
-            <button>DELETE</button>
-          </div>
-=======
-            <Button onClick={props.onClick} danger>DELETE</Button>
-          </div> : ""}
->>>>>>> 2c2e047d5e6861ec5328e77a0e3677644969d650
+          {user ? (
+            <div className="group-item__actions">
+              <button onClick={props.onClick} danger>
+                DELETE
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
         </Card>
       </li>
     </React.Fragment>
