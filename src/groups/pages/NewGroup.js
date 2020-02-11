@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../auth/auth";
+import routes from "../../routes/apiRoutes"
 
-const NewGroup = () => {
+const NewGroup = ({history}) => {
+  const {user} = useContext(AuthContext);
+  const organizer = user.name;
   let [inputGroup, setInputGroup] = useState({
     type: "",
     groupName: "",
@@ -26,16 +30,29 @@ const NewGroup = () => {
   function handleSubmit(event) {
     event.preventDefault();
     setCreateGroup(prevCreateGroup => [...prevCreateGroup, inputGroup]);
+    const newGroup = {
+      organizer: organizer,
+      groupTitle: inputGroup.groupName,
+      gameTitle: inputGroup.title,
+      location: inputGroup.location,
+      gameType: inputGroup.type,
+      minimumAge: inputGroup.minAge,
+      requiredGender: inputGroup.gender,
+      description: inputGroup.groupDescription
+    };
+    routes.createGroup(newGroup).then(()=>{
+      history.push("/");
+    });
   }
   // console.log(inputGroup)
   // console.log(createGroup)
 
-  const groups = createGroup.map(group => (
-    <h2 key={group.groupName}>
-      {group.type} {group.groupName} {group.title}
-      {group.description} {group.location} {group.gender} {group.minAge}
-    </h2>
-  ));
+  // const groups = createGroup.map(group => (
+  //   <h2 key={group.groupName}>
+  //     {group.type} {group.groupName} {group.title}
+  //     {group.description} {group.location} {group.gender} {group.minAge}
+  //   </h2>
+  // ));
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
@@ -79,7 +96,7 @@ const NewGroup = () => {
         <br />
         <button>Create Group</button>
       </form>
-      {groups}
+      {/* {groups} */}
     </React.Fragment>
   );
 };
