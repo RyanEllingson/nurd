@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../auth/auth";
-import routes from "../../routes/apiRoutes"
+import routes from "../../routes/apiRoutes";
 
-const NewGroup = ({history}) => {
-  const {user} = useContext(AuthContext);
+const NewGroup = ({ history }) => {
+  const { user } = useContext(AuthContext);
   const organizer = user.name;
   let [inputGroup, setInputGroup] = useState({
     type: "",
@@ -14,7 +14,6 @@ const NewGroup = ({history}) => {
     gender: "",
     minAge: ""
   });
-  let [createGroup, setCreateGroup] = useState([]);
 
   // updates inputGroup state
   function handleChange(event) {
@@ -26,6 +25,7 @@ const NewGroup = ({history}) => {
       };
     });
   }
+  let [createGroup, setCreateGroup] = useState([]);
   //add the input data to createGroup array
   function handleSubmit(event) {
     event.preventDefault();
@@ -40,7 +40,7 @@ const NewGroup = ({history}) => {
       requiredGender: inputGroup.gender,
       description: inputGroup.groupDescription
     };
-    routes.createGroup(newGroup).then(()=>{
+    routes.createGroup(newGroup).then(() => {
       history.push("/");
     });
   }

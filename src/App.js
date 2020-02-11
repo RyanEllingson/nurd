@@ -1,8 +1,9 @@
 //Don't change code unless discussed first with AyDy! Will disrupt navbar links! Thanks!
 //trying out links with local host 3000. Will merge with backend. Expect changes.
+import React from "react";
 import "bulma/css/bulma.css";
 import "react-bulma-components/src/index.sass";
-import React from "react";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -21,6 +22,7 @@ import { Auth } from "./auth/auth";
 
 import LoginAuth from "./user/pages/LoginAuth";
 import Register from "./user/pages/Register";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 const App = () => {
   return (
     <Auth>
