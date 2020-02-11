@@ -19,11 +19,7 @@ export default {
     });
   },
   createGroup: function(newGroup) {
-    return axios
-    .post("https://ryan-nurd-be.herokuapp.com/api/groups", newGroup
-    ).then(res => {
-      console.log(res);
-    });
+    return axios.post("https://ryan-nurd-be.herokuapp.com/api/groups", newGroup);
   },
   getAllGroups: function() {
     return axios.get("https://ryan-nurd-be.herokuapp.com/api/groups");
