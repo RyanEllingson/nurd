@@ -1,13 +1,15 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, useContext, Fragment } from "react";
 
 import Card from "@material-ui/core/Card";
 // import Card from "../../shared/components/UIElements/Card";
 import GroupItem from "./GroupItem";
 import "./GroupList.css";
 import routes from "../../routes/apiRoutes";
+import { AuthContext } from "../../auth/auth";
 
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
+  const {user} = useContext(AuthContext);
 
   const getGroups = function() {
     routes.getAllGroups().then(function(response) {
@@ -20,6 +22,10 @@ const GroupList = () => {
     // console.log(id);
     routes.deleteGroup(id).then(getGroups());
   };
+
+  const handleJoin = function(id) {
+    routes.addMember(user.id, user.name, id).then(console.log("Joined group"));
+  }
 
   useEffect(() => {
     getGroups();
@@ -50,8 +56,11 @@ const GroupList = () => {
               // address={group.address}
               organizer={group.organizer}
               location={group.location}
-              onClick={() => {
+              onClickDelete={() => {
                 handleDelete(group._id);
+              }}
+              onClickJoin={() => {
+                handleJoin(group._id);
               }}
             />
           ))}

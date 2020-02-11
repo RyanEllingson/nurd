@@ -39,8 +39,11 @@ const GroupItem = props => {
           </div>
           {user ? (
             <div className="group-item__actions">
-              <button onClick={props.onClick} danger>
+              <button onClick={props.onClickDelete} danger>
                 DELETE
+              </button>
+              <button onClick={props.onClickJoin} secondary>
+                JOIN
               </button>
             </div>
           ) : (
