@@ -40,7 +40,7 @@ const GroupItem = props => {
               VIEW ON MAP
             </Button> */}
             {/* <Button to={`/groups/${props.id}`}>EDIT</Button> */}
-            <Button danger>DELETE</Button>
+            <Button onClick={props.onClick} danger>DELETE</Button>
           </div>
         </Card>
       </li>
