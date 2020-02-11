@@ -1,12 +1,14 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
-import Input from "../../shared/components/FormElements/Input";
+// import Input from "../../shared/components/FormElements/Input";
+// import { Field, Form, Formik, FormikProps } from "formik";
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
@@ -84,14 +86,17 @@ const LoginAuth = ({ history }) => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+
           <form onSubmit={loginSubmitHandler} className={classes.form}>
-            <Input
+            <input
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
               margin="normal"
+              placeholder="email"
               required
               fullWidth
+              type="text"
               id="email"
               label="Email Address"
               name="email"
@@ -99,25 +104,25 @@ const LoginAuth = ({ history }) => {
               errorText="Not a valid email address"
               autoFocus
             />
-
-            <Input
+            <input
               onChange={e => setPassword(e.target.value)}
               value={password}
               variant="outlined"
               margin="normal"
+              placeholder="password"
               required
               fullWidth
+              type="text"
               name="password"
               label="Password"
-              type="password"
               id="password"
               autoComplete="current-password"
               errorText="Not a valid password"
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+              label="Remember me" */}
+
             <Button
               type="submit"
               fullWidth

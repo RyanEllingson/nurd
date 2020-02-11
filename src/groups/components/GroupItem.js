@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Card from "../../shared/components/UIElements/Card";
-import Button from "../../shared/components/FormElements/Button";
-import Modal from "../../shared/components/UIElements/Modal";
-import "./GroupItem.css";
-import "../../shared/components/UIElements/Modal.css";
+// import Button from "../../shared/components/FormElements/Button";
+// import Modal from "../../shared/components/UIElements/Modal";
+// import "./GroupItem.css";
+// import "../../shared/components/UIElements/Modal.css";
 
 const GroupItem = props => {
   // const [showMap, setMap] = useState(false);
@@ -40,7 +40,7 @@ const GroupItem = props => {
               VIEW ON MAP
             </Button> */}
             {/* <Button to={`/groups/${props.id}`}>EDIT</Button> */}
-            <Button danger>DELETE</Button>
+            <button>DELETE</button>
           </div>
         </Card>
       </li>

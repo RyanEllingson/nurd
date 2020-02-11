@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../auth/auth";
 
@@ -6,37 +6,36 @@ import MainHeader from "./MainHeader";
 import NavLinks from "./NavLinks";
 import SideBar from "./SideBar";
 import Backdrop from "../UIElements/Backdrop";
-import Button from "../FormElements/Button";
+import Button from "@material-ui/core/Button";
+// import Button from "../FormElements/Button";
 import "./MainNavigation.css";
 
-//creating different state for mobile view. When in mobile- onclick of hamburger icon, sidedrawer is opened or closed.
-//Backdrop
+//creating different state for mobile view. When in mobile- onclick of hamburger icon, sidebar is opened or closed.
+//Backdrop in index.html
 
 const MainNavigation = props => {
   const { user, logoutUser } = useContext(AuthContext);
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [barIsOpen, setBarIsOpen] = useState(false);
 
-  const openDrawerHandler = () => {
-    setDrawerIsOpen(true);
+  const openBarHandler = () => {
+    setBarIsOpen(true);
   };
 
-  const closeDrawerHandler = () => {
-    setDrawerIsOpen(false);
+  const closeBarHandler = () => {
+    setBarIsOpen(false);
   };
 
   return (
-    <React.Fragment>
-      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
-      <SideBar show={drawerIsOpen} onClick={closeDrawerHandler}>
-        <nav className="main-navigation__drawer-nav">
+    <Fragment>
+      {barIsOpen && <Backdrop onClick={closeBarHandler} />}
+      <SideBar show={barIsOpen} onClick={closeBarHandler}>
+        <nav className="main-navigation__bar-nav">
           <NavLinks />
         </nav>
       </SideBar>
 
       <MainHeader>
-        <button
-          className="main-navigation__menu-btn"
-          onClick={openDrawerHandler}>
+        <button className="main-navigation__menu-btn" onClick={openBarHandler}>
           <span />
           <span />
           <span />
@@ -58,7 +57,7 @@ const MainNavigation = props => {
           Logout
         </Button>
       </MainHeader>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
