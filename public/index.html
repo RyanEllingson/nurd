@@ -42,6 +42,20 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <style>
+      #parallax {
+    position: relative ;
+    width: 100% ;
+    height: 101vh ;
+    background-image: url("../../assets/images/Front Layer Background.png"),
+    url("../../assets/images/Second Layer Thick Background.png"),
+    url("../../assets/images/Third Layer Background.png"), 
+    url("../../assets/images/Fourth Layer Background.png");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+  }
+    </style>
     -->
 
     <!--
@@ -55,7 +69,7 @@
     <title>React App</title>
   </head>
 
-  <body>
+  <body id="parallax">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- drawer hook div created so that side drawer is not in root div -->
     <div id="backdrop-hook"></div>
@@ -89,5 +103,24 @@
       src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
       crossorigin
     ></script>
+    <script>
+    (function () {
+      // Add event listener
+      document.addEventListener("mousemove", parallax);
+      const elem = document.querySelector("#parallax");
+      // Magic happens here
+      function parallax(e) {
+        let _w = window.innerWidth / 2;
+        let _h = window.innerHeight / 2;
+        let _mouseX = e.clientX;
+        let _depth1 = `${50 + (_mouseX - _w) * 0.08}% `;
+        let _depth2 = `${50 + (_mouseX - _w) * 0.06}% `;
+        let _depth3 = `${50 + (_mouseX - _w) * 0.04}% `;
+        let _depth4 = `${50 + (_mouseX - _w) * 0.02}% `;
+        let x = `${_depth4}, ${_depth3}, ${_depth2}, ${_depth1} `;
+        elem.style.backgroundPosition = x;
+      }
+    })();
+    </script>                                                                  
   </body>
 </html>

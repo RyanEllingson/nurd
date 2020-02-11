@@ -9,11 +9,20 @@ import routes from "../../routes/apiRoutes";
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
 
-  useEffect(() => {
+  const getGroups = function() {
     routes.getAllGroups().then(function(response) {
       console.log(response.data);
       setGroups(response.data);
     });
+  };
+
+  const handleDelete = function(id) {
+    // console.log(id);
+    routes.deleteGroup(id).then(getGroups());
+  };
+
+  useEffect(() => {
+    getGroups();
   }, []);
 
   if (groups.length === 0) {
@@ -29,22 +38,25 @@ const GroupList = () => {
 
   return (
     <Fragment>
-      <Card>
+      <main>
         <ul className="group-list">
           {groups.map(group => (
             <GroupItem
               key={group._id}
-              id={group.id}
+              id={group._id}
               // image={group.imageUrl}
               groupTitle={group.groupTitle}
               description={group.description}
               // address={group.address}
               organizer={group.organizer}
               location={group.location}
+              onClick={() => {
+                handleDelete(group._id);
+              }}
             />
           ))}
         </ul>
-      </Card>
+      </main>
     </Fragment>
   );
 };
