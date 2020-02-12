@@ -21,14 +21,14 @@ const NavLinks = props => {
           SEARCH
         </NavLink>
       </li>
-      <li>{user ? <NavLink to="/u1/groups">MY GROUPS</NavLink> : " "}</li>
-      <li>{user ? <NavLink to="/u1/profile">MY PROFILE</NavLink> : " "}</li>
-      <li>{user ? <NavLink to="/groups/new">CREATE GROUPS</NavLink> : " "} </li>
+      <li>{user ? <NavLink to="/u1/groups">My Groups</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/u1/profile">My Profile</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/groups/new">Create Groups</NavLink> : " "} </li>
       <li>
-        <NavLink to="/register">REGISTER</NavLink>
+        <NavLink to="/register">Register</NavLink>
       </li>
       <li>
-        <NavLink to="/login">LOGIN</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </li>
     </ul>
   );
