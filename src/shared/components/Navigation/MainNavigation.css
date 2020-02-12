@@ -9,6 +9,10 @@
   margin-right: 2rem;
   cursor: pointer;
   color: white;
+  background-color: rgba(68, 85, 90, 0.4);
+}
+.main-header {
+  background-color: rgba(68, 85, 90, 0.4);
 }
 
 .main-navigation__menu-btn span {
@@ -16,6 +20,21 @@
   width: 3rem;
   height: 2.5px;
   background: white;
+}
+
+.loginBut {
+  border: 1px solid #DFE3E4 !important;
+  padding: 8px !important;
+  border-radius: 5px !important;
+}
+.loginBut:hover {
+  color: #44555A !important;
+  background-color: #DFE3E4 !important;
+  transition: .3s !important;
+}
+.MuiButton-label:hover {
+  color: #44555A !important;
+  transition: .3s !important;
 }
 
 .main-navigation__title {

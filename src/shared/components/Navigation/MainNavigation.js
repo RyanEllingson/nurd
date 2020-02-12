@@ -49,7 +49,7 @@ const MainNavigation = props => {
         <nav className="main-navigation__header-nav">
           <NavLinks />
         </nav>
-        <Button
+        <Button className="loginBut"
           onClick={e => {
             e.preventDefault();
             logoutUser();

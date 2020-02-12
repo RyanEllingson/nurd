@@ -12,24 +12,24 @@ const NavLinks = props => {
       <li>
         <NavLink to="/" exact>
           {" "}
-          THE REALM
+          The Realm
         </NavLink>
       </li>
       <li>
         <NavLink to="/search/" exact>
           {" "}
-          SEARCH
+          Search
         </NavLink>
       </li>
-      <li>{user ? <NavLink to="/groups">ALL GROUPS</NavLink> : " "}</li>
-      <li>{user ? <NavLink to="/profile">MY PROFILE</NavLink> : " "}</li>
-      <li>{user ? <NavLink to="/groups/new">CREATE GROUPS</NavLink> : " "} </li>
-      <li>{!user ? <NavLink to="/register">REGISTER</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/u1/groups">All Groups</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/u1/profile">My Profile</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/groups/new">Create Groups</NavLink> : " "} </li>
+      <li>{!user ? <NavLink to="/register">Register</NavLink> : " "}</li>
       {/* <li>{!user ? <NavLink to="/login">LOGIN</NavLink> : " "}</li> */}
       <li>
         <NavLink to="/about/" exact>
           {" "}
-          ABOUT US
+          About Us
         </NavLink>
       </li>
     </ul>

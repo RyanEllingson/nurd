@@ -1,0 +1,29 @@
+.regTitle {
+    font-family: 'Inknut Antiqua', cursive !important;
+    color: #DFE3E4 !important;
+}
+.MuiButton-contained {
+    background-color:   #44555A !important ;
+}
+.MuiAvatar-colorDefault {
+    background-color: transparent !important;
+    color: #DFE3E4 !important;
+}
+
+.MuiButton-label {
+    font-family: 'Inknut Antiqua', cursive !important;
+    color: #DFE3E4;
+    
+}
+
+.MuiButton-root {
+    text-transform: none !important;
+}
+
+main {
+    margin-top: 0 !important;
+}
+
+.main-navigation__title a {
+    font-size: 40px;
+}
