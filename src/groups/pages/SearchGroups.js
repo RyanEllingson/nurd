@@ -3,7 +3,7 @@
 import React from "react";
 // import { useParams } from "react-router-dom";
 
-import GroupList from "../components/GroupList";
+import SearchGroupList from "../components/SearchGroupList";
 import "../components/GroupList.css";
 
 // const DUMMY_SEARCH = [
@@ -50,12 +50,10 @@ import "../components/GroupList.css";
 // ];
 
 const SearchGroups = () => {
-  
-
   // const userId = useParams().userId;
   // const loadedGroups = DUMMY_SEARCH.filter(group => group.creator);
   // return <GroupList items={loadedGroups} />;
-  return <GroupList />
+  return <SearchGroupList />;
 };
 
 export default SearchGroups;
