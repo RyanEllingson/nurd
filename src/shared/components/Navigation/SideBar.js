@@ -1,4 +1,4 @@
-//Mobile view
+// https://medium.com/@luqman.qureshi/create-animated-sidebar-component-in-react-with-react-transition-group-7956ed575c00
 import React from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
