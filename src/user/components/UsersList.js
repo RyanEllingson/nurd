@@ -7,7 +7,6 @@ import Card from "../../shared/components/UIElements/Card";
 import "./UsersList.css";
 
 let UsersList = props => {
-  console.log(props.items);
   if (props.items.length === 0) {
     return (
       <div className="center">
