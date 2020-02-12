@@ -1,0 +1,361 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  
+}
+
+.csstransforms .cn-wrapper {
+  font-size: 1em;
+  width: 26em;
+  height: 26em;
+  overflow: visible;
+  position: fixed;
+  z-index: 10;
+  bottom: -19em;
+  left: 51%;
+  margin-left: -13em;
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  transform: scale(0.1);
+  pointer-events: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.csstransforms .opened-nav {
+  pointer-events: auto;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.cn-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: 2;
+}
+
+.cn-overlay.on-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cn-button {
+  border: none;
+  background: none;
+  color: #44555A;
+  text-align: center;
+  font-size: 1.8em;
+  padding-bottom: 1em;
+  height: 3.5em;
+  width: 3.5em;
+  background-color: #DFE3E4;
+  position: fixed;
+  left: 50%;
+  margin-left: -1.75em;
+  bottom: -1.75em;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.cn-button:hover,
+.cn-button:active,
+.cn-button:focus {
+  color: #DFE3E4;
+  background-color: #44555A;
+}
+#cn-button:hover ~ #cn-wrapper:not(.opened-nav) {
+  -webkit-transform: scale(.7);
+  -moz-transform: scale(.7);
+  -ms-transform: scale(.7);
+  transform: scale(.7);
+}
+
+.csstransforms .cn-wrapper li {
+  position: absolute;
+  font-size: 1.5em;
+  width: 0em;
+  height: 5.6em;
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  overflow: visible;
+  left: 50%;
+  top: 50%;
+  margin-top: -1.3em;
+  margin-left: -0.4em;
+  -webkit-transition: border .3s ease;
+  -moz-transition: border .3s ease;
+  transition: border .3s ease;
+  transition: 0.4s;
+}
+
+.csstransforms .cn-wrapper li a {
+  display: block;
+  font-size: 1.18em;
+  height: 6em;
+  width: 4em;
+  position: absolute;
+  bottom: 2em;
+  right: -2.1em;
+  text-decoration: none;
+  border-radius: 12px;
+  color: #fff;
+  padding-top: 1.8em;
+  text-align: center;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: opacity 0.3s, color 0.3s;
+  -moz-transition: opacity 0.3s, color 0.3s;
+  transition: opacity 0.3s, color 0.3s;
+  transition: 0.4s;
+
+}
+
+.csstransforms .cn-wrapper li a span {
+  font-size: 1.1em;
+  margin-top: -10px;
+}
+
+/* for a central angle x, the list items must be skewed by 90-x degrees
+in our case x=40deg so skew angle is 50deg
+items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */
+
+.csstransforms .cn-wrapper li:first-child {
+  -webkit-transform: rotate(-10deg) ;
+  -ms-transform: rotate(-10deg) ;
+  -moz-transform: rotate(-10deg) ;
+  transform: rotate(-70deg) ;
+}
+
+.csstransforms .cn-wrapper li:nth-child(2) {
+  -webkit-transform: rotate(30deg) ;
+  -ms-transform: rotate(30deg) ;
+  -moz-transform: rotate(30deg) ;
+  transform: rotate(-35deg) ;
+}
+
+.csstransforms .cn-wrapper li:nth-child(3) {
+  -webkit-transform: rotate(70deg) ;
+  -ms-transform: rotate(70deg) ;
+  -moz-transform: rotate(70deg) ;
+  transform: rotate(0deg) 
+}
+
+.csstransforms .cn-wrapper li:nth-child(4) {
+  -webkit-transform: rotate(110deg) ;
+  -ms-transform: rotate(110deg) ;
+  -moz-transform: rotate(110deg) ;
+  transform: rotate(35deg) ;
+}
+
+.csstransforms .cn-wrapper li:nth-child(5) {
+  -webkit-transform: rotate(150deg) ;
+  -ms-transform: rotate(150deg) ;
+  -moz-transform: rotate(150deg) ;
+  transform: rotate(70deg) ;
+}
+a {
+  font-size: 10px;
+}
+.csstransforms .cn-wrapper li:nth-child(odd) a {
+  background-image: url("../assets/images/cardFront.png");
+  background-size: 4em 6em;
+  font-family: 'inknut Antiqua', cursive !important;
+  color: black;
+  line-height: 90px;
+  letter-spacing: -3px;
+}
+
+.csstransforms .cn-wrapper li:nth-child(even) a {
+  background-image: url("../assets/images/cardFront.png");
+  background-size: 4em 6em;
+  font-family: 'Inknut Antiqua', cursive !important;
+  color: black;
+  line-height: 90px;
+  letter-spacing: -3px;
+}
+
+.csstransforms .cn-wrapper li:not(.active) a:focus
+{
+    position:fixed;
+}
+ 
+/* fallback */
+.no-csstransforms .cn-button {
+  display: none;
+}
+
+.no-csstransforms .cn-wrapper li {
+  position: static;
+  float: left;
+  font-size: 1em;
+  height: 5em;
+  width: 5em;
+  background-color: #eee;
+  text-align: center;
+  line-height: 5em;
+}
+
+.no-csstransforms .cn-wrapper li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.3em;
+  border-right: 1px solid #ddd;
+}
+
+.no-csstransforms .cn-wrapper li a:last-child {
+  border: none;
+}
+
+.no-csstransforms .cn-wrapper li a:hover,
+.no-csstransforms .cn-wrapper li a:active,
+.no-csstransforms .cn-wrapper li a:focus {
+  background-color: white;
+}
+
+.no-csstransforms .cn-wrapper li.active a {
+  background-color: #6F325C;
+  color: #fff;
+}
+
+.no-csstransforms .cn-wrapper {
+  font-size: 1em;
+  height: 5em;
+  width: 25.15em;
+  bottom: 0;
+  margin-left: -12.5em;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  border: 1px solid #ddd;
+}
+/*Hover effects*/
+.csstransforms .cn-wrapper li:first-child:hover{
+  -webkit-transform: scale(1.1) rotate(-10deg);
+  -ms-transform: scale(1.1) rotate(-10deg);
+  -moz-transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.1) rotate(-70deg);
+  z-index: 10;
+  transition-timing-function: ease-in;
+  transition: 0.4s;
+  
+  animation: glowing 2000ms infinite;
+}
+.csstransforms .cn-wrapper li:first-child:hover a{
+  animation: glowing 2000ms infinite;
+}
+
+.csstransforms .cn-wrapper li:nth-child(2):hover {
+  -webkit-transform: scale(1.1) rotate(-10deg);
+  -ms-transform: scale(1.1) rotate(-10deg);
+  -moz-transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.1) rotate(-35deg);
+  z-index: 10;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+
+}
+.csstransforms .cn-wrapper li:nth-child(2):hover a{
+  animation: glowing 2000ms infinite;
+}
+
+.csstransforms .cn-wrapper li:nth-child(3):hover {
+  -webkit-transform: scale(1.1) rotate(-10deg);
+  -ms-transform: scale(1.1) rotate(-10deg);
+  -moz-transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.1) rotate(-0deg);
+  z-index: 10;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+.csstransforms .cn-wrapper li:nth-child(3):hover a{
+  animation: glowing 2000ms infinite;
+}
+
+.csstransforms .cn-wrapper li:nth-child(4):hover {
+  -webkit-transform: scale(1.1) rotate(-10deg);
+  -ms-transform: scale(1.1) rotate(-10deg);
+  -moz-transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.1) rotate(35deg);
+  z-index: 10;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+.csstransforms .cn-wrapper li:nth-child(4):hover a{
+  animation: glowing 2000ms infinite;
+}
+
+.csstransforms .cn-wrapper li:nth-child(5):hover {
+  -webkit-transform: scale(1.1) rotate(-10deg);
+  -ms-transform: scale(1.1) rotate(-10deg);
+  -moz-transform: scale(1.1) rotate(-10deg);
+  transform: scale(1.1) rotate(70deg);
+  z-index: 10;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s;
+}
+.csstransforms .cn-wrapper li:nth-child(5):hover a{
+  animation: glowing 2000ms infinite;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -.5em #D6823A; }
+  40% { box-shadow: 0 0 1em #D6823A; }
+  60% { box-shadow: 0 0 1em #D6823A; }
+  100% { box-shadow: 0 0 -.5em #D6823A; }
+}
+
+@media screen and (max-width:480px) {
+  .csstransforms .cn-wrapper {
+    font-size: .68em;
+  }
+
+  .cn-button {
+    font-size: 1em;
+  }
+
+  .csstransforms .cn-wrapper li {
+    font-size: 1.52em;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .no-csstransforms .cn-wrapper {
+    width: 15.15px;
+    margin-left: -7.5em;
+  }
+
+  .no-csstransforms .cn-wrapper li {
+    height: 3em;
+    width: 3em;
+  }
+}

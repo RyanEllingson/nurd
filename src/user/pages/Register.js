@@ -1,4 +1,5 @@
 // https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/sign-in-side
+
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../auth/auth";
 
@@ -12,6 +13,8 @@ import Typography from "@material-ui/core/Typography";
 import CurrentDate from "../../shared/components/Navigation/CurrentDate";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
+import "./Register.css";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    background: "transparent",
+    
 
     [theme.breakpoints.up(400 + theme.spacing(2) * 2)]: {
       width: 400,
@@ -36,7 +39,9 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    margin: theme.spacing(3, 4)
+    margin: theme.spacing(3, 4),
+    backgroundColor: "rgba(68, 85, 90, 0.4)",
+    borderRadius: "20px",
   },
   // avatar: {
   //   margin: theme.spacing(1),
@@ -49,8 +54,20 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     marginTop: theme.spacing(2, 0, 2)
   },
+  input: {
+    marginTop: "15px",
+    color: "#242C38",
+    backgroundColor: "rgba(223, 227, 228, 0.75)",
+    padding: "2px",
+    border: "2px solid rgb(68, 85, 90,)" 
+  },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#D6823A",
+    fontFamily: "'Inkut Antiqua', cursive",
+  },
+  regTitle: {
+    fontFamily: "'Inkut Antiqua', cursive",
   }
 }));
 
@@ -103,12 +120,12 @@ const Register = ({ history }) => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography  component="h1" variant="h5" className="regTitle">
             Register
           </Typography>
           <form onSubmit={regSubmitHandler} className={classes.form}>
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setName(e.target.value)}
               value={name}
               variant="outlined"
@@ -124,7 +141,7 @@ const Register = ({ history }) => {
               autoFocus
             />
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setEmail(e.target.value)}
               value={email}
               variant="outlined"
@@ -141,7 +158,7 @@ const Register = ({ history }) => {
             />
 
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setPassword(e.target.value)}
               value={password}
               variant="outlined"
@@ -157,7 +174,7 @@ const Register = ({ history }) => {
               errortext={errors.password}
             />
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setPassword2(e.target.value)}
               value={password2}
               variant="outlined"
@@ -173,7 +190,7 @@ const Register = ({ history }) => {
               errortext={errors.password2}
             />
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setAge(e.target.value)}
               value={age}
               variant="outlined"
@@ -188,7 +205,7 @@ const Register = ({ history }) => {
               errortext={errors.age}
             />
             <input
-              className={classes.layout}
+              className={classes.input}
               onChange={e => setGender(e.target.value)}
               value={gender}
               variant="outlined"
@@ -203,7 +220,7 @@ const Register = ({ history }) => {
               errortext={errors.gender}
             />
             <br />
-            <Button type="submit" fullwidth variant="contained" color="primary">
+            <Button type="submit" fullwidth variant="contained" className="submit">
               Submit
             </Button>
             <columns items>

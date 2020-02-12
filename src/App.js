@@ -24,13 +24,15 @@ import { Auth } from "./auth/auth";
 import LoginAuth from "./user/pages/LoginAuth";
 import Register from "./user/pages/Register";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+
+
 const App = () => {
   return (
     <Auth>
       {/* /* ensures that path is exact and will redirect user from landing on unsupported pages */}
       <Router>
         <MainNavigation />
-        <main>
+
           <Switch>
             <Route exact path="/" component={LoginAuth} />
 
@@ -49,7 +51,7 @@ const App = () => {
             <Route exact path="/register" component={Register} />
             <Redirect to="/" />
           </Switch>
-        </main>
+  
       </Router>
     </Auth>
   );
