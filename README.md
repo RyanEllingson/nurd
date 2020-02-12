@@ -21,6 +21,7 @@ Material UI
 react-transition-group
 Passport
 jwt-decode
+Paralax
 (testing tech- moccha, sinon, chai)
 
 ## Installation
@@ -50,8 +51,27 @@ Jesse Edwards
 
 ## Challenges
 Communicating issues effectively 
+
 Compatability issues
+
 Focusing efforts on core features
+
+## Road Map
+(Wouldn't it be nice...)
+Things to fix/include:
+Fix- Anyone can delete a group- only able to delete if user was logged in as the creator
+
+Fix- User still remains on a group list despite user deleting group from user list
+
+Include- Search by game type- need to include other categories
+
+Include- Personalized gaming experience, control over environment
+
+Include- Ability to rate members- limit toxic environment
+
+screen resolution affects display (Paralax)- 4k, retina
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
