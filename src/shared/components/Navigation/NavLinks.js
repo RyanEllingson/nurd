@@ -26,6 +26,12 @@ const NavLinks = props => {
       <li>{user ? <NavLink to="/groups/new">CREATE GROUPS</NavLink> : " "} </li>
       <li>{!user ? <NavLink to="/register">REGISTER</NavLink> : " "}</li>
       {/* <li>{!user ? <NavLink to="/login">LOGIN</NavLink> : " "}</li> */}
+      <li>
+        <NavLink to="/about/" exact>
+          {" "}
+          ABOUT US
+        </NavLink>
+      </li>
     </ul>
   );
 };
