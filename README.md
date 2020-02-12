@@ -10,7 +10,7 @@ As a gamer I would like to find local groups of games that I play. I would also 
 
 ## Deployed App
 
-[Deployed App](https://netlify.com/app-address)
+[Deployed App](https://nurd-game-realm.netlify.com/)
 
 ## Images
 
