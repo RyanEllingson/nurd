@@ -328,10 +328,10 @@ export default function SearchGroupList() {
             id: "outlined-age-native-simple"
           }}>
           <option value="" >Game Type</option>
-          <option value={"videoGames"}>Video Games</option>
-          <option value={"boardGames"}>Board Games</option>
-          <option value={"tradingCards"}>Trading Cards</option>
-          <option value={"other"}>Other</option>
+          <option value={"Video"}>Video Games</option>
+          <option value={"Board"}>Board Games</option>
+          <option value={"Card"}>Trading Cards</option>
+          <option value={"Other"}>Other</option>
 
         </Select>
         <button onClick={searchGroups}>Click here to search</button>
