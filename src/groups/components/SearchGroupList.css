@@ -1,0 +1,14 @@
+.search{
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+option {
+    color: #DFE3E4;
+}
+
+.MuiSelect-outlined.MuiSelect-outlined, .MuiSelect-outlined.MuiSelect-outlined:focus{
+    background-color: rgba(68, 85, 90, 0.4);
+    color: #DFE3E4;
+    font-size: 17px;
+    border: transparent;
+}

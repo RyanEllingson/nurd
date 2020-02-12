@@ -12,8 +12,11 @@
 
 .MuiButton-label {
     font-family: 'Inknut Antiqua', cursive !important;
-    color: #DFE3E4;
+    color: #DFE3E4 !important;
     
+}
+.MuiButton-label:hover {
+    color:  #DFE3E4 !important;
 }
 
 .MuiButton-root {

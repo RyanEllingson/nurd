@@ -237,6 +237,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import "./GroupItem.css";
+import "./SearchGroupList.css";
 
 import Card from "@material-ui/core/Card";
 // import Card from "../../shared/components/UIElements/Card";
@@ -248,7 +249,13 @@ import { AuthContext } from "../../auth/auth";
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120
+    minWidth: 120,
+    paddingTop: "5rem",
+    paddingLeft: "5rem",
+  },
+  dropDown: {
+    backgroundColor: "rgba(68, 85, 90, 0.4)",
+    color:"white",
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
@@ -309,7 +316,7 @@ export default function SearchGroupList() {
     <Fragment>
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
-          Game Types
+
         </InputLabel>
         <Select
           native
@@ -320,11 +327,12 @@ export default function SearchGroupList() {
             name: "GameTypes",
             id: "outlined-age-native-simple"
           }}>
-          <option value="" />
-          <option value={"Video"}>Video Games</option>
-          <option value={"Board"}>Board Games</option>
-          <option value={"Card"}>Trading Cards</option>
-          <option value={"Other"}>Other</option>
+          <option value="" >Game Type</option>
+          <option value={"videoGames"}>Video Games</option>
+          <option value={"boardGames"}>Board Games</option>
+          <option value={"tradingCards"}>Trading Cards</option>
+          <option value={"other"}>Other</option>
+
         </Select>
         <button onClick={searchGroups}>Click here to search</button>
       </FormControl>

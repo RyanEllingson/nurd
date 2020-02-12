@@ -52,6 +52,20 @@
   height: 20rem;
   width: 100%;
 }
+.card {
+  background-color: rgba(68, 85, 90, 0.4) !important;
+  
+}
+
+.mBut {
+  background-color: rgba(68, 85, 90, 0.4);
+  border-radius: 20px;
+  border: transparent;
+  margin: 20px;
+  padding: 10px;
+  color: #DFE3E4;
+
+}
 
 @media (min-width: 768px) {
   .group-item__image {

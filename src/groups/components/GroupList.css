@@ -3,6 +3,31 @@
   list-style: none;
   margin: 1rem auto;
   padding: 0;
-  width: 90%;
-  max-width: 22rem;
+  width: 100%;
+  padding-left:5rem;
+  padding-top:4rem;
+  margin-right:1rem;
+  color: #DFE3E4;
+}
+.group_item-item *{
+  color: #DFE3E4 !important;
+}
+.card {
+  color: #DFE3E4 !important;
+}
+.group-item {
+  margin-right: 50px;
+}
+.groupTitle {
+  font-weight: bold;
+}
+
+.ButStyle {
+  background-color: rgba(68, 85, 90, 0.4);
+  border-radius: 20px;
+  border: transparent;
+  margin: 20px;
+  padding: 10px;
+  color: #DFE3E4;
+
 }

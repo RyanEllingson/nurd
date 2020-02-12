@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../../auth/auth";
 import routes from "../../routes/apiRoutes";
+import "./NewGroup.css";
 
 const NewGroup = ({ history }) => {
   const { user } = useContext(AuthContext);
@@ -55,7 +56,8 @@ const NewGroup = ({ history }) => {
   // ));
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit}>
+      <div className="paper">
+      <form className="display" onSubmit={handleSubmit}>
         <input
           placeholder="type of game"
           name="type"
@@ -94,8 +96,11 @@ const NewGroup = ({ history }) => {
         />
         <br />
         <br />
-        <button>Create Group</button>
+        <button className="makeBut">Create Group</button>
       </form>
+      
+      
+</div>      
       {/* {groups} */}
     </React.Fragment>
   );
