@@ -69,7 +69,7 @@ Include- Personalized gaming experience, control over environment
 
 Include- Ability to rate members- limit toxic environment
 
-screen resolution affects display (Paralax)- 4k, retina
+Fix- Screen resolution affects display (Paralax)- 4k, retina
 
 
 
