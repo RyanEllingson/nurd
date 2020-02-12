@@ -337,7 +337,7 @@ export default function SearchGroupList() {
             name: "GameTypes",
             id: "outlined-age-native-simple"
           }}>
-          <option value=""></option>
+          <option value="">Game Type</option>
           <option value={"videoGames"}>Video Games</option>
           <option value={"boardGames"}>Board Games</option>
           <option value={"tradingCards"}>Trading Cards</option>
