@@ -28,8 +28,6 @@ export default {
     return axios
     .post("https://ryan-nurd-be.herokuapp.com/api/groups/type", {
       gameType: searchType
-    }).then(res => {
-      console.log(res);
     });
   },
   addMember: function(memberId, memberName, groupId) {

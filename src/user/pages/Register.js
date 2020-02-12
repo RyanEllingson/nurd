@@ -84,7 +84,7 @@ const Register = ({ history }) => {
   useEffect(() => {
     if (user) {
       //   console.log("shiboopy");
-      history.push("/search");
+      history.push("/groups");
     }
   }, [user, history]);
 

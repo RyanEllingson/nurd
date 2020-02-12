@@ -229,7 +229,7 @@
 //   );
 // }
 
-import React, { useState, Fragment, useRef, useEffect } from "react";
+import React, { useState, Fragment, useRef, useEffect, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 // import FormHelperText from '@material-ui/core/FormHelperText';
@@ -237,6 +237,13 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import "./GroupItem.css";
+
+import Card from "@material-ui/core/Card";
+// import Card from "../../shared/components/UIElements/Card";
+import GroupItem from "./GroupItem";
+import "./GroupList.css";
+import routes from "../../routes/apiRoutes";
+import { AuthContext } from "../../auth/auth";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -248,13 +255,40 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SearchGroups() {
+export default function SearchGroupList() {
   const classes = useStyles();
   const [state, setState] = useState({
     // age: "",
     // name: "hai"
-    GroupTypes: ""
+    gameType: ""
   });
+
+  const [groups, setGroups] = useState([]);
+  const {user} = useContext(AuthContext);
+
+  const searchGroups = function() {
+    console.log(state);
+    routes.getGroupsByType(state.gameType).then(function(response) {
+      console.log(response.data);
+      const groups = [...response.data]
+      setGroups(groups);
+    });
+  };
+
+  const handleDelete = function(id) {
+    // console.log(id);
+    routes.deleteGroup(id).then(function() {
+      setGroups([]);
+      searchGroups();
+    });
+  };
+
+  const handleJoin = function(id) {
+    routes.addMember(user.id, user.name, id).then(function() {
+      setGroups([]);
+      searchGroups();
+    });
+  }
 
   const inputLabel = useRef(null);
 
@@ -270,6 +304,7 @@ export default function SearchGroups() {
     });
   };
 
+
   return (
     <Fragment>
       <FormControl variant="outlined" className={classes.formControl}>
@@ -278,20 +313,44 @@ export default function SearchGroups() {
         </InputLabel>
         <Select
           native
-          value={state.age}
-          onChange={handleChange("age")}
+          value={state.gameType}
+          onChange={handleChange("gameType")}
           labelWidth={labelWidth}
           inputProps={{
             name: "GameTypes",
             id: "outlined-age-native-simple"
           }}>
           <option value="" />
-          <option value={"videoGames"}>Video Games</option>
-          <option value={"boardGames"}>Board Games</option>
-          <option value={"tradingCards"}>Trading Cards</option>
-          <option value={"other"}>Other</option>
+          <option value={"Video"}>Video Games</option>
+          <option value={"Board"}>Board Games</option>
+          <option value={"Card"}>Trading Cards</option>
+          <option value={"Other"}>Other</option>
         </Select>
+        <button onClick={searchGroups}>Click here to search</button>
       </FormControl>
+      {groups ? <main>
+        <ul className="group-list">
+          {groups.map(group => (
+            <GroupItem
+              key={group._id}
+              id={group._id}
+              // image={group.imageUrl}
+              groupTitle={group.groupTitle}
+              description={group.description}
+              // address={group.address}
+              organizer={group.organizer}
+              location={group.location}
+              onClickDelete={() => {
+                handleDelete(group._id);
+              }}
+              onClickJoin={() => {
+                handleJoin(group._id);
+              }}
+              members={group.currentMembers}
+            />
+          ))}
+        </ul>
+      </main> : ""}
     </Fragment>
   );
 }
