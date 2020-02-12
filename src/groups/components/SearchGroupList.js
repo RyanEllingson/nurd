@@ -237,11 +237,18 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import "./GroupItem.css";
+import "./SearchGroupList.css";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120
+    minWidth: 120,
+    paddingTop: "5rem",
+    paddingLeft: "5rem",
+  },
+  dropDown: {
+    backgroundColor: "rgba(68, 85, 90, 0.4)",
+    color:"white",
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
@@ -274,7 +281,7 @@ export default function SearchGroups() {
     <Fragment>
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
-          Game Types
+
         </InputLabel>
         <Select
           native
@@ -285,7 +292,7 @@ export default function SearchGroups() {
             name: "GameTypes",
             id: "outlined-age-native-simple"
           }}>
-          <option value="" />
+          <option value="" >Game Type</option>
           <option value={"videoGames"}>Video Games</option>
           <option value={"boardGames"}>Board Games</option>
           <option value={"tradingCards"}>Trading Cards</option>

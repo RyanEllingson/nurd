@@ -17,7 +17,10 @@
 .nav-links a {
   color: DFE3E4;
   text-decoration: none;
-  padding: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding-top: 0;
+  padding-bottom:0;
   background-color: rgba(68, 85, 90, 0.4);
   border-radius: 5px;
   font-family: 'Inknut Antiqua', cursive !important;

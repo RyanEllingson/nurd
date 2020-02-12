@@ -6,7 +6,7 @@ import Card from "../../shared/components/UIElements/Card";
 // import Modal from "../../shared/components/UIElements/Modal";
 // import "./GroupItem.css";
 // import "../../shared/components/UIElements/Modal.css";
-
+import "./GroupItem.css";
 const GroupItem = props => {
   const { user } = useContext(AuthContext);
   // const [showMap, setMap] = useState(false);
@@ -43,10 +43,10 @@ const GroupItem = props => {
           </div>
           {user ? (
             <div className="group-item__actions">
-              <button onClick={props.onClickDelete} danger>
+              <button className="mBut" onClick={props.onClickDelete} danger>
                 DELETE
               </button>
-              <button onClick={props.onClickJoin} secondary>
+              <button className="mBut" onClick={props.onClickJoin} secondary>
                 JOIN
               </button>
             </div>
