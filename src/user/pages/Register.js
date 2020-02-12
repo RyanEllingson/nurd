@@ -15,7 +15,6 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Register.css";
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundSize: "cover"
@@ -25,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    
 
     [theme.breakpoints.up(400 + theme.spacing(2) * 2)]: {
       width: 400,
@@ -41,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     margin: theme.spacing(3, 4),
     backgroundColor: "rgba(68, 85, 90, 0.4)",
-    borderRadius: "20px",
+    borderRadius: "20px"
   },
   // avatar: {
   //   margin: theme.spacing(1),
@@ -59,15 +57,15 @@ const useStyles = makeStyles(theme => ({
     color: "#242C38",
     backgroundColor: "rgba(223, 227, 228, 0.75)",
     padding: "2px",
-    border: "2px solid rgb(68, 85, 90,)" 
+    border: "2px solid rgb(68, 85, 90,)"
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#D6823A",
-    fontFamily: "'Inkut Antiqua', cursive",
+    fontFamily: "'Inkut Antiqua', cursive"
   },
   regTitle: {
-    fontFamily: "'Inkut Antiqua', cursive",
+    fontFamily: "'Inkut Antiqua', cursive"
   }
 }));
 
@@ -120,7 +118,7 @@ const Register = ({ history }) => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography  component="h1" variant="h5" className="regTitle">
+          <Typography component="h1" variant="h5" className="regTitle">
             Register
           </Typography>
           <form onSubmit={regSubmitHandler} className={classes.form}>
@@ -220,12 +218,16 @@ const Register = ({ history }) => {
               errortext={errors.gender}
             />
             <br />
-            <Button type="submit" fullwidth variant="contained" className="submit">
+            <Button
+              type="submit"
+              fullwidth
+              variant="contained"
+              className="submit">
               Submit
             </Button>
             <columns items>
               <Link
-                href="http://localhost:3000/register"
+                href="http://localhost:3000/login"
                 type="link"
                 variant="body2">
                 {"Already have an account? Login"}

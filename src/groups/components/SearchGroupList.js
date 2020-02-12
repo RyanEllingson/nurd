@@ -229,7 +229,13 @@
 //   );
 // }
 
-import React, { useState, Fragment, useRef, useEffect, useContext } from "react";
+import React, {
+  useState,
+  Fragment,
+  useRef,
+  useEffect,
+  useContext
+} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 // import FormHelperText from '@material-ui/core/FormHelperText';
@@ -239,7 +245,7 @@ import NativeSelect from "@material-ui/core/NativeSelect";
 import "./GroupItem.css";
 import "./SearchGroupList.css";
 
-import Card from "@material-ui/core/Card";
+// import Card from "@material-ui/core/Card";
 // import Card from "../../shared/components/UIElements/Card";
 import GroupItem from "./GroupItem";
 import "./GroupList.css";
@@ -251,11 +257,11 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     minWidth: 120,
     paddingTop: "5rem",
-    paddingLeft: "5rem",
+    paddingLeft: "5rem"
   },
   dropDown: {
     backgroundColor: "rgba(68, 85, 90, 0.4)",
-    color:"white",
+    color: "white"
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
@@ -271,13 +277,13 @@ export default function SearchGroupList() {
   });
 
   const [groups, setGroups] = useState([]);
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const searchGroups = function() {
     console.log(state);
     routes.getGroupsByType(state.gameType).then(function(response) {
       console.log(response.data);
-      const groups = [...response.data]
+      const groups = [...response.data];
       setGroups(groups);
     });
   };
@@ -295,7 +301,7 @@ export default function SearchGroupList() {
       setGroups([]);
       searchGroups();
     });
-  }
+  };
 
   const inputLabel = useRef(null);
 
@@ -311,13 +317,17 @@ export default function SearchGroupList() {
     });
   };
 
-
   return (
     <Fragment>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
+      <br />
+      <br />
+      <br />
+      <br />
 
-        </InputLabel>
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel
+          ref={inputLabel}
+          htmlFor="outlined-age-native-simple"></InputLabel>
         <Select
           native
           value={state.gameType}
@@ -327,38 +337,41 @@ export default function SearchGroupList() {
             name: "GameTypes",
             id: "outlined-age-native-simple"
           }}>
-          <option value="" >Game Type</option>
+          <option value=""></option>
           <option value={"videoGames"}>Video Games</option>
           <option value={"boardGames"}>Board Games</option>
           <option value={"tradingCards"}>Trading Cards</option>
           <option value={"other"}>Other</option>
-
         </Select>
         <button onClick={searchGroups}>Click here to search</button>
       </FormControl>
-      {groups ? <main>
-        <ul className="group-list">
-          {groups.map(group => (
-            <GroupItem
-              key={group._id}
-              id={group._id}
-              // image={group.imageUrl}
-              groupTitle={group.groupTitle}
-              description={group.description}
-              // address={group.address}
-              organizer={group.organizer}
-              location={group.location}
-              onClickDelete={() => {
-                handleDelete(group._id);
-              }}
-              onClickJoin={() => {
-                handleJoin(group._id);
-              }}
-              members={group.currentMembers}
-            />
-          ))}
-        </ul>
-      </main> : ""}
+      {groups ? (
+        <main>
+          <ul className="group-list">
+            {groups.map(group => (
+              <GroupItem
+                key={group._id}
+                id={group._id}
+                // image={group.imageUrl}
+                groupTitle={group.groupTitle}
+                description={group.description}
+                // address={group.address}
+                organizer={group.organizer}
+                location={group.location}
+                onClickDelete={() => {
+                  handleDelete(group._id);
+                }}
+                onClickJoin={() => {
+                  handleJoin(group._id);
+                }}
+                members={group.currentMembers}
+              />
+            ))}
+          </ul>
+        </main>
+      ) : (
+        ""
+      )}
     </Fragment>
   );
 }

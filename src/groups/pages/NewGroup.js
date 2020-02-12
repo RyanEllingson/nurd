@@ -56,52 +56,59 @@ const NewGroup = ({ history }) => {
   // ));
   return (
     <React.Fragment>
-      <div className="paper">
-      <form className="display" onSubmit={handleSubmit}>
-        <input
-          placeholder="type of game"
-          name="type"
-          value={inputGroup.type}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="group name"
-          name="groupName"
-          value={inputGroup.groupName}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="game title"
-          name="title"
-          value={inputGroup.title}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="address"
-          name="location"
-          value={inputGroup.location}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="gender"
-          name="gender"
-          value={inputGroup.gender}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="min age requirement"
-          name="minAge"
-          value={inputGroup.minAge}
-          onChange={handleChange}
-        />
+      <main>
         <br />
         <br />
-        <button className="makeBut">Create Group</button>
-      </form>
-      
-      
-</div>      
-      {/* {groups} */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="paper">
+          <form className="display" onSubmit={handleSubmit}>
+            <input
+              placeholder="type of game"
+              name="type"
+              value={inputGroup.type}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="group name"
+              name="groupName"
+              value={inputGroup.groupName}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="game title"
+              name="title"
+              value={inputGroup.title}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="address"
+              name="location"
+              value={inputGroup.location}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="gender"
+              name="gender"
+              value={inputGroup.gender}
+              onChange={handleChange}
+            />
+            <input
+              placeholder="min age requirement"
+              name="minAge"
+              value={inputGroup.minAge}
+              onChange={handleChange}
+            />
+            <br />
+            <br />
+            <button className="makeBut">Create Group</button>
+          </form>
+        </div>
+        {/* {groups} */}
+      </main>
     </React.Fragment>
   );
 };

@@ -2,7 +2,7 @@
 
 import React from "react";
 // import { useParams } from "react-router-dom";
-
+// import Card from "@material-ui/core/Card";
 import SearchGroupList from "../components/SearchGroupList";
 import "../components/GroupList.css";
 import "./SearchGroups.css";
@@ -54,7 +54,15 @@ const SearchGroups = () => {
   // const userId = useParams().userId;
   // const loadedGroups = DUMMY_SEARCH.filter(group => group.creator);
   // return <GroupList items={loadedGroups} />;
-  return <SearchGroupList className="search"/>;
+  return (
+    <React.Fragment>
+      <main>
+        <div>
+          <SearchGroupList className="search" />
+        </div>
+      </main>
+    </React.Fragment>
+  );
 };
 
 export default SearchGroups;

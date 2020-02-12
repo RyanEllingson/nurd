@@ -4,16 +4,17 @@
   margin: 1rem auto;
   padding: 0;
   width: 100%;
-  padding-left:5rem;
-  padding-top:4rem;
-  margin-right:1rem;
-  color: #DFE3E4;
+  padding-left: 5rem;
+  padding-top: 4rem;
+  margin-right: 1rem;
+  margin-top: 0;
+  color: #dfe3e4;
 }
-.group_item-item *{
-  color: #DFE3E4 !important;
+.group_item-item * {
+  color: #dfe3e4 !important;
 }
 .card {
-  color: #DFE3E4 !important;
+  color: #dfe3e4 !important;
 }
 .group-item {
   margin-right: 50px;
@@ -28,6 +29,5 @@
   border: transparent;
   margin: 20px;
   padding: 10px;
-  color: #DFE3E4;
-
+  color: #dfe3e4;
 }
