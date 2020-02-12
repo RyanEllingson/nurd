@@ -14,17 +14,24 @@ const GroupList = () => {
   const getGroups = function() {
     routes.getAllGroups().then(function(response) {
       console.log(response.data);
-      setGroups(response.data);
+      const groups = [...response.data]
+      setGroups(groups);
     });
   };
 
   const handleDelete = function(id) {
     // console.log(id);
-    routes.deleteGroup(id).then(getGroups());
+    routes.deleteGroup(id).then(function() {
+      setGroups([]);
+      getGroups();
+    });
   };
 
   const handleJoin = function(id) {
-    routes.addMember(user.id, user.name, id).then(console.log("Joined group"));
+    routes.addMember(user.id, user.name, id).then(function() {
+      setGroups([]);
+      getGroups();
+    });
   }
 
   useEffect(() => {
@@ -62,6 +69,7 @@ const GroupList = () => {
               onClickJoin={() => {
                 handleJoin(group._id);
               }}
+              members={group.currentMembers}
             />
           ))}
         </ul>

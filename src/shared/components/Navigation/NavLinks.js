@@ -12,23 +12,25 @@ const NavLinks = props => {
       <li>
         <NavLink to="/" exact>
           {" "}
-          THE REALM
+          The Realm
         </NavLink>
       </li>
       <li>
         <NavLink to="/search/" exact>
           {" "}
-          SEARCH
+          Search
         </NavLink>
       </li>
       <li>{user ? <NavLink to="/u1/groups">My Groups</NavLink> : " "}</li>
       <li>{user ? <NavLink to="/u1/profile">My Profile</NavLink> : " "}</li>
       <li>{user ? <NavLink to="/groups/new">Create Groups</NavLink> : " "} </li>
+      <li>{!user ? <NavLink to="/register">Register</NavLink> : " "}</li>
+      {/* <li>{!user ? <NavLink to="/login">LOGIN</NavLink> : " "}</li> */}
       <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/about/" exact>
+          {" "}
+          About Us
+        </NavLink>
       </li>
     </ul>
   );
@@ -36,7 +38,8 @@ const NavLinks = props => {
 
 export default NavLinks;
 
-//Not all links will be rendered all the time.
-//My places- only when logged in
-//Add Place- only when logged in
-//Authenticate- only when NOT logged in
+//Not all links will be rendered all the time!!!
+//My groups- only when logged in
+//Create Groups- only when logged in
+//Login- only when NOT logged in
+//Logout - only when logged in

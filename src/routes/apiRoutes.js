@@ -43,5 +43,8 @@ export default {
   },
   deleteGroup: function(groupId) {
     return axios.delete(`https://ryan-nurd-be.herokuapp.com/api/groups/${groupId}`);
+  },
+  getUserById: function(userId) {
+    return axios.get(`https://ryan-nurd-be.herokuapp.com/api/users/${userId}`);
   }
 };

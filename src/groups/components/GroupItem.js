@@ -36,6 +36,10 @@ const GroupItem = props => {
             <h3>{props.location}</h3>
             <p>{props.description}</p>
             <h3>{props.organizer}</h3>
+            <h3>Current Members:</h3>
+            {props.members.map(member=>{
+              return <h2>{member.name}</h2>
+            })}
           </div>
           {user ? (
             <div className="group-item__actions">
