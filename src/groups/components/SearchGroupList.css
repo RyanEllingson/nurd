@@ -1,14 +1,19 @@
-.search{
-    padding-top: 5rem;
-    padding-left: 5rem;
+/* .Card {
+  padding: 15rem;
+} */
+
+.search {
+  padding-top: 5rem;
+  padding-left: 5rem;
 }
 option {
-    color: #DFE3E4;
+  color: black;
 }
 
-.MuiSelect-outlined.MuiSelect-outlined, .MuiSelect-outlined.MuiSelect-outlined:focus{
-    background-color: rgba(68, 85, 90, 0.4);
-    color: #DFE3E4;
-    font-size: 17px;
-    border: transparent;
+.MuiSelect-outlined.MuiSelect-outlined,
+.MuiSelect-outlined.MuiSelect-outlined:focus {
+  background-color: rgba(68, 85, 90, 0.4);
+  color: #dfe3e4;
+  font-size: 17px;
+  border: transparent;
 }

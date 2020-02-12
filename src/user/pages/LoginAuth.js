@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    
 
     [theme.breakpoints.up(400 + theme.spacing(2) * 2)]: {
       width: 400,
@@ -41,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     backgroundColor: "rgba(68, 85, 90, 0.4)",
     borderRadius: "20px",
-    paddingTop: "6rem",
+    paddingTop: "6rem"
   },
   // avatar: {
   //   margin: theme.spacing(1),
@@ -51,23 +50,22 @@ const useStyles = makeStyles(theme => ({
     width: "100%", // Fix IE 11 issue.
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-
+    alignItems: "center"
   },
   input: {
     marginTop: "15px",
     color: "#242C38",
     backgroundColor: "rgba(223, 227, 228, 0.75)",
     padding: "2px",
-    border: "2px solid rgb(68, 85, 90,)" 
+    border: "2px solid rgb(68, 85, 90,)"
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#D6823A",
-    fontFamily: "'Inkut Antiqua', cursive",
+    fontFamily: "'Inkut Antiqua', cursive"
   },
   regTitle: {
-    fontFamily: "'Inkut Antiqua', cursive",
+    fontFamily: "'Inkut Antiqua', cursive"
   }
 }));
 
@@ -98,6 +96,11 @@ const LoginAuth = ({ history }) => {
   return (
     <Fragment>
       <main>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Card className={classes.paper}>
           <Avatar></Avatar>
           {/* 
@@ -151,7 +154,7 @@ const LoginAuth = ({ history }) => {
             <columns>
               <columns item>
                 <Link
-                className="notRegLink"
+                  className="notRegLink"
                   href="http://localhost:3000/register"
                   type="link"
                   variant="body2">
