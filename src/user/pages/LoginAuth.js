@@ -25,7 +25,7 @@ const LoginAuth = ({ history }) => {
     // If user is logged in and navigates to login page, reroute to default page
     if (user) {
       console.log(user);
-      history.push("/search");
+      history.push("/groups");
     }
   }, [user, history]);
 

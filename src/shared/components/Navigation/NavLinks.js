@@ -21,8 +21,8 @@ const NavLinks = props => {
           SEARCH
         </NavLink>
       </li>
-      <li>{user ? <NavLink to="/u1/groups">MY GROUPS</NavLink> : " "}</li>
-      <li>{user ? <NavLink to="/u1/profile">MY PROFILE</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/groups">ALL GROUPS</NavLink> : " "}</li>
+      <li>{user ? <NavLink to="/profile">MY PROFILE</NavLink> : " "}</li>
       <li>{user ? <NavLink to="/groups/new">CREATE GROUPS</NavLink> : " "} </li>
       <li>{!user ? <NavLink to="/register">REGISTER</NavLink> : " "}</li>
       {/* <li>{!user ? <NavLink to="/login">LOGIN</NavLink> : " "}</li> */}
